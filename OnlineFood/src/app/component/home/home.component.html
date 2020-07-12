@@ -1,0 +1,41 @@
+<nav class="navbar  navbar-expand-md navbar-expand-lg bg-dark navbar-fixed-top ">
+    <div class="container-fluid">
+		<a class="navbar-brand" href="#">Fooddo</a>
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarid" aria-controls="navbarid" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon" > </span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarid">
+		<ul class="navbar-nav  ml-auto">
+			
+
+            <button
+            mat-raised-button
+            color="primary"
+            class="login-button">
+           <a>Contact</a>
+          </button>
+			
+			<li class="nav-item dropdown">
+                <button
+                mat-raised-button
+                color="primary"
+                class="login-button" routerLink="/login">
+               <a> Login </a>
+              </button>
+				
+			</li>
+   
+		</ul>
+</div>
+</div>
+</nav>
+
+
+<div class="container-fluid">
+    <img src="assets/images/food.jpg">
+</div>
+<button routerLink ="/customer"> Customer</button>
+<button routerLink ="/vendor">Vendor</button>
+<button routerLink ="/admin">Admin</button>
+<app-footer></app-footer>

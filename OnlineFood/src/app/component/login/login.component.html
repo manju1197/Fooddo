@@ -1,0 +1,141 @@
+<app-header></app-header>
+<mat-card>
+  <mat-tab-group>
+    <mat-tab label="Login"> 
+      <mat-card-content>
+        <form class="form-container"   (ngSubmit)="login()" novalidate [formGroup]="loginForm">
+           <mat-form-field>
+            <input matInput
+              placeholder="Email"
+              formControlName="email"
+              >
+              <mat-error *ngIf="signupForm.controls.email.invalid">Email is required</mat-error>
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Password"
+              type="password"
+              minlength="6"
+              formControlName="password"
+             >
+              <mat-error
+                *ngIf="signupForm.controls.password.errors && signupForm.controls.password.errors.required">
+                Password is required
+              </mat-error>
+              <mat-error
+                *ngIf="signupForm.controls.password.errors && signupForm.controls.password.errors.minlength">
+                Password must be of length 6
+              </mat-error>
+            <mat-icon matSuffix>lock</mat-icon>
+          </mat-form-field>
+        <div>
+          <label id="example-radio-group-label" class="shift">Role </label>
+          <mat-radio-group formControlName="role">
+            <mat-radio-button  class="example-radio-button shift"  value="admin">Admin</mat-radio-button>
+            <mat-radio-button  class="example-radio-button shift"  value="vendor">Restaurant Owner</mat-radio-button>
+            <mat-radio-button   class="example-radio-button shift"  value ="Customer">Customer</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      
+          <mat-checkbox>Remember Me!</mat-checkbox> 
+          <button
+            mat-raised-button
+            color="primary"
+            class="login-button" type="submit">
+            <a>Login</a>
+          </button>
+
+         
+        </form>
+      </mat-card-content>  
+    </mat-tab>
+    <!-- --------------------------------Sign Up--------------------------------------------------- -->
+    <mat-tab label="Sign Up"> 
+      <mat-card-content>
+        <form  class="form-container" (ngSubmit)="signup()" novalidate [formGroup]="signupForm" >
+          <mat-form-field >
+            <input  matInput placeholder="User Name"    formControlName="name" > 
+            <mat-icon matSuffix>perm_identity</mat-icon>
+            <mat-error
+            *ngIf="signupForm.controls.name.invalid">
+            Username is required
+          </mat-error>
+
+          </mat-form-field>
+       
+        <mat-form-field>
+            <input  matInput  placeholder="Email"  formControlName="email"  >
+            <mat-error *ngIf="signupForm.controls.email.invalid">Email is required</mat-error>
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+          <mat-form-field>
+            <input  matInput placeholder="Password"  type="password"   minlength="6" formControlName="password"  >
+            <mat-error
+            *ngIf="signupForm.controls.password.errors && signupForm.controls.password.errors.minlength">
+            Password must be of length 6
+          </mat-error>
+             
+            <mat-icon matSuffix>lock</mat-icon>
+
+          </mat-form-field>
+          <!-- <mat-form-field>
+            <input
+            matInput
+            placeholder="Confirm Password"
+            type="password"
+            minlength="6"
+            formControlName="confirmPassword"
+            >
+            <mat-error
+            *ngIf="signupForm.controls.repassword.errors && signupForm.controls.repassword.errors.required">
+            Re-Enter Password is required
+          </mat-error>
+          <mat-icon matSuffix>lock</mat-icon>
+        </mat-form-field> -->
+        <mat-form-field>
+          <input
+          matInput
+          placeholder="Contact"
+          type="number"
+          required
+          minlength="10"
+          maxlength="10"
+         
+          formControlName="contact"
+          >
+         
+        <mat-icon matSuffix>call</mat-icon>
+      </mat-form-field>
+      <!-- <label id="example-radio-group-label" class="shift">Role </label>
+<mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="Role">
+  <mat-radio-button class="example-radio-button shift" *ngFor="let role of roles" [value]="role">
+    {{role}}
+  </mat-radio-button>
+</mat-radio-group> -->
+<div>
+  <label id="example-radio-group-label" class="shift">Role </label>
+  <mat-radio-group formControlName="role">
+    <mat-radio-button  class="example-radio-button shift" value="admin" >Admin</mat-radio-button>
+    <mat-radio-button  class="example-radio-button shift" value="vendor" >Restaurant Owner</mat-radio-button>
+    <mat-radio-button   class="example-radio-button shift" value ="Customer" >Customer</mat-radio-button>
+  </mat-radio-group>
+</div>
+          <button
+            mat-raised-button
+            color="primary"
+            class="login-button" type="submit">
+           <a>Sign Up</a> 
+          </button>
+        </form>
+      </mat-card-content>  
+    
+    </mat-tab>
+   
+  </mat-tab-group></mat-card>
+<app-footer> </app-footer>
+
