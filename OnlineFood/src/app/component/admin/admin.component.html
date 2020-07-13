@@ -1,3 +1,39 @@
 <app-header></app-header>
-<p>admin works!</p>
+<mat-sidenav-container>
+    <mat-sidenav opened mode="side" class="shift">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/customer">Customer</a>
+        <a mat-list-item routerLink="/customer">Vendor</a>
+        <a mat-list-item >Order</a>
+    
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="container">
+            <div class="row" >
+                <div class="col-md-6 box"> 
+                    <p>Restaurants</p>
+                    <p class="counter">10</p>
+                </div>
+                <div class="col-md-6 box">
+                    <p>Customers</p>
+                    <p class="counter">50</p>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6 box">
+                    <p>Orders</p>
+                    <p class="counter">80</p>
+                </div>
+                <div class="col-md-6 box">
+                    <p>Sales</p>
+                    <p class="counter">10 0</p>
+                </div>
+
+            </div>
+        </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
 <app-footer></app-footer>

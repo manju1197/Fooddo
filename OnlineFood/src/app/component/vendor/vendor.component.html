@@ -1,3 +1,16 @@
 <app-header></app-header>
-<p>vendor works!</p>
+<mat-sidenav-container>
+    <mat-sidenav opened mode="side" class="shift">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/customer">Add Item</a>
+        <a mat-list-item routerLink="/customer">Order List</a>
+        <a mat-list-item >view items</a>
+     <button mat-raised-button >Add</button>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
 <app-footer></app-footer>

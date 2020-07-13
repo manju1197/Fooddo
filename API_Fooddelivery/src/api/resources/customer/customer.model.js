@@ -1,14 +1,18 @@
 import mongoose from 'mongoose';
 import { number } from 'joi';
 const Schema = mongoose.Schema;
-const VendorSchema = new Schema({
+const ClientSchema = new Schema({
      
-name:{
+firstname:{
     type:String,
     required :true
 },
-regId:{
-
+lastname:{
+    type:String,
+    required :true
+},
+dob:{
+    type:Date
 },
 address:{
     type:String
@@ -27,21 +31,7 @@ contact:{
     required:true,
     unique:true
 },
-regId:{
-    ref:'User',
-    type:Schema.Types.ObjectId,
-    required:true
-},
-type:{
-    type:String,  
-},
-opentime:{
-    type:time
-},
-closetime:{
-    type:time
-},
-status:{
+gender:{
     type:String
 },
 created_dt:{
@@ -52,5 +42,5 @@ isActive:{
     type:Boolean,
     default:true
 }
-},{collection : 'restaurants'});
-export default new mongoose.model('vendor',VendorSchema);
+},{collection : 'Customer'});
+export default new mongoose.model('client',ClientSchema);

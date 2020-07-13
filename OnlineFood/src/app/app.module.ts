@@ -23,7 +23,8 @@ import { VendorComponent } from './component/vendor/vendor.component';
 import { AdminComponent } from './component/admin/admin.component';
 import { HomeComponent } from './component/home/home.component';
 import { UserComponent } from './component/user/user.component';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list'
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,9 @@ import { UserComponent } from './component/user/user.component';
     MatSnackBarModule,
     HttpClientModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
