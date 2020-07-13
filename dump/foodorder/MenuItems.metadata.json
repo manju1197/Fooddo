@@ -1,1 +1,0 @@
-{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"foodorder.MenuItems"}],"uuid":"00ac51275b734e6f866bae2e62b76cb3"}
