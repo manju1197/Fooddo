@@ -1,5 +1,12 @@
 .box{
-    background-color: #424242;
+    background-color: #757575;
+    padding: 20px;
+    margin:30px;
+    
+    height: 300px;
+}
+.full{
+    width: 100%;
 }
 .counter{
     font-size: 40px;
@@ -8,4 +15,15 @@
 p{
     font-size: 30px;
     color:white;
-}
+}mat-sidenav-content {
+    height: 100vh;
+    width: 100vh;
+  }
+  .shift{
+      width: 238px;
+      background-color: black;
+  }
+  a{
+      color: white !important;
+      size: 35px;
+  }
