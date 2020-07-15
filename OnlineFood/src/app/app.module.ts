@@ -31,6 +31,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ModalComponent } from './component/modal/modal.component';
 import { SharedService} from './component/login/shared.service';
+import { OrderlistComponent } from './component/orderlist/orderlist.component';
 
 
 
@@ -47,6 +48,7 @@ import { SharedService} from './component/login/shared.service';
     UserComponent,
     AddItemComponent,
     ModalComponent,
+    OrderlistComponent,
    
   ],
   imports: [

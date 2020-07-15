@@ -17,7 +17,7 @@ interface Category {
 export class AddItemComponent implements OnInit {
 Categoryname: string;
   hide = true;
-  addList=any;
+  addList:any;
 addForm:FormGroup;
 
 
