@@ -10,3 +10,28 @@ mat-sidenav-content {
       color: white !important;
       size: 35px;
   }
+  .sidebar{
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    background:black;
+}
+.login-button {
+    margin-top: 20px;
+    // display: block;
+    width: 80%;
+    margin: 3px auto;
+    background-color: black;
+    border: 1px solid white;
+    padding: 10px;
+    color: white;
+    font-size: 20px !important;
+  }
+@media (max-width: 767px)  {
+    .sidebar{
+        position: fixed;
+        width: 41%;
+        height: 100%;
+        background:black;
+    }
+}

@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'OnlineFood';
+  storedPosts = []
+
+  onPostAdded(event) {
+    this.storedPosts.push(event);
+  }
 }

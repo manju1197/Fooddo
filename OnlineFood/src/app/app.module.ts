@@ -24,7 +24,16 @@ import { AdminComponent } from './component/admin/admin.component';
 import { HomeComponent } from './component/home/home.component';
 import { UserComponent } from './component/user/user.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list'
+import {MatListModule} from '@angular/material/list';
+import { AddItemComponent } from './component/add-item/add-item.component';
+import {MatSelectModule} from '@angular/material/select';
+
+import {MatDialogModule} from '@angular/material/dialog';
+import { ModalComponent } from './component/modal/modal.component';
+import { SharedService} from './component/login/shared.service';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +45,8 @@ import {MatListModule} from '@angular/material/list'
     AdminComponent,
     HomeComponent,
     UserComponent,
+    AddItemComponent,
+    ModalComponent,
    
   ],
   imports: [
@@ -54,9 +65,13 @@ import {MatListModule} from '@angular/material/list'
     MatInputModule,
     MatRadioModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatSelectModule,
+    MatDialogModule
+  
+  
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

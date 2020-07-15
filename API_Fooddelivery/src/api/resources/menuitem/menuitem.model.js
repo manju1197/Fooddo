@@ -7,16 +7,19 @@ name:{
     type:String,
     required :true
 },
-CategoryId:{
-    ref:'Category',
-    type:Schema.Types.ObjectId,
+Categoryname:{
+   type:String,
     required:true
 },
-restroId:{
-    ref:'vendor',
-    type:Schema.Types.ObjectId,
-    required:true
-},
+// restroId:{
+//     ref:'vendor',
+//     type:Schema.Types.ObjectId,
+//     required:true
+// },
+
+// url:{
+//     type:String
+//  }
 price:{
     type:Number
 },

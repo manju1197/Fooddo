@@ -1,0 +1,55 @@
+<form class="form-container">  
+    <mat-form-field>
+        <input matInput
+          placeholder="Restaurant no."
+          formControlName="restaurant"
+          >
+   </mat-form-field>
+   <mat-form-field>
+    <input matInput
+      placeholder="Address"
+      formControlName="address"
+      >
+     
+    <mat-icon matSuffix>email</mat-icon>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput
+      placeholder="City"
+      formControlName="city"
+      >
+   
+    <mat-icon matSuffix>email</mat-icon>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput
+      placeholder="State"
+      formControlName="state"
+      >
+      
+    <mat-icon matSuffix>email</mat-icon>
+  </mat-form-field>
+  <mat-radio-group formControlName="Type">
+    <mat-radio-button value="1">Veg</mat-radio-button>
+    <mat-radio-button value="2">Non-Veg</mat-radio-button>
+    <mat-radio-button value="3">Both</mat-radio-button>
+  </mat-radio-group>
+  <mat-form-field>
+    <input matInput type="time"
+      placeholder="Open Time"
+      formControlName="otime"
+      >
+      
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="time"
+      placeholder="Close Time"
+      formControlName="ctime"
+      >
+      
+  </mat-form-field>
+  <div class="button-row">
+    <button mat-raised-button color="primary" type="submit" >Submit</button>
+    <button mat-raised-button color="warn" >Close</button>
+  </div>
+</form>

@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 import { number } from 'joi';
+import User from '../user/user.model';
 const Schema = mongoose.Schema;
+
 const VendorSchema = new Schema({
      
 name:{
@@ -8,7 +10,9 @@ name:{
     required :true
 },
 regId:{
-
+    ref:'User',
+        type:Schema.Types.ObjectId,
+        required:true
 },
 address:{
     type:String
@@ -36,10 +40,10 @@ type:{
     type:String,  
 },
 opentime:{
-    type:time
+    type:Date
 },
 closetime:{
-    type:time
+    type:Date
 },
 status:{
     type:String
