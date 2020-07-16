@@ -10,14 +10,14 @@
                           </mat-option>
                         </mat-select>
                       </mat-form-field>
-                      <p> Selected Category: {{Categoryname} </p>
+                      <p> Selected Category: {{Categoryname} }</p>
                       
                 <br>
     
                       <mat-form-field>
                           <label>Menu Image</label>
                           <input matInput type="string"  formControlName="image">
-                          <img src ="assets/images/foodo.jpg">
+                         
                       </mat-form-field>
                       <br>
     
@@ -45,7 +45,7 @@
                         
                       </mat-form-field>
                       <div >
-                        <button  mat-raised-button  class="btn" type="submit" >Save</button>
+                        <button  mat-raised-button  class="btn" type="submit"  mat-dialog-close>Save</button>
                         <button  mat-raised-button  class=" btn btn1" (click)="onNoClick()">Close</button>
                       </div>
                       

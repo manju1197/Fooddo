@@ -49,7 +49,8 @@ user = new User();
         this.router.navigate(['/customer'],{relativeTo:this.route});
       }
   else if(this.loginForm.value.role== "vendor"){
-    this.router.navigate(['/vendor'],{relativeTo:this.route});
+    this.router.navigate(['/modal']);
+    // this.router.navigate(['/vendor'],{relativeTo:this.route});
   }
   else{
     this.router.navigate(['/admin'],{relativeTo:this.route});

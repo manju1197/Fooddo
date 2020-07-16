@@ -7,6 +7,8 @@ import { VendorComponent } from './component/vendor/vendor.component';
 import { AdminComponent } from './component/admin/admin.component';
 import { AddItemComponent } from './component/add-item/add-item.component';
 import { OrderlistComponent } from './component/orderlist/orderlist.component';
+import { ModalComponent } from './component/modal/modal.component';
+import { ProductorderComponent } from './component/productorder/productorder.component';
 
 
 const routes: Routes = [
@@ -17,7 +19,9 @@ const routes: Routes = [
   {path:'vendor',component:VendorComponent},
   {path:'admin',component:AdminComponent},
   {path:'additem',component:AddItemComponent},
-  {path:'order',component:OrderlistComponent}
+  {path:'order',component:OrderlistComponent},
+  {path:'modal',component:ModalComponent},
+  {path:'product',component:ProductorderComponent}
 ];
 
 @NgModule({

@@ -1,55 +1,97 @@
-<form class="form-container">  
-    <mat-form-field>
+<div class="container">
+  <div class="card model" >
+    <div  >
+      <form class="form-container "  (ngSubmit)="Save()" novalidate [formGroup]="addForm">  
+        <mat-form-field>
+          <label>Reataurant Name</label>
+            <input matInput
+              placeholder="Restaurant Name."
+              formControlName="restaurant"
+              >
+       </mat-form-field>
+       <br>
+       <mat-form-field>
         <input matInput
-          placeholder="Restaurant no."
-          formControlName="restaurant"
+          placeholder=" Restaurant Image."
+          formControlName="url"
           >
-   </mat-form-field>
-   <mat-form-field>
-    <input matInput
-      placeholder="Address"
-      formControlName="address"
-      >
-     
-    <mat-icon matSuffix>email</mat-icon>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput
-      placeholder="City"
-      formControlName="city"
-      >
-   
-    <mat-icon matSuffix>email</mat-icon>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput
-      placeholder="State"
-      formControlName="state"
-      >
-      
-    <mat-icon matSuffix>email</mat-icon>
-  </mat-form-field>
-  <mat-radio-group formControlName="Type">
-    <mat-radio-button value="1">Veg</mat-radio-button>
-    <mat-radio-button value="2">Non-Veg</mat-radio-button>
-    <mat-radio-button value="3">Both</mat-radio-button>
-  </mat-radio-group>
-  <mat-form-field>
-    <input matInput type="time"
-      placeholder="Open Time"
-      formControlName="otime"
-      >
-      
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput type="time"
-      placeholder="Close Time"
-      formControlName="ctime"
-      >
-      
-  </mat-form-field>
-  <div class="button-row">
-    <button mat-raised-button color="primary" type="submit" >Submit</button>
-    <button mat-raised-button color="warn" >Close</button>
+    </mat-form-field>
+    <br>
+       <mat-form-field>
+        <input matInput
+          placeholder="Address"
+          formControlName="address"
+          >
+         
+        <mat-icon matSuffix>house</mat-icon>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput
+          placeholder="City"
+          formControlName="city"
+          >
+       
+        <mat-icon matSuffix>location_city</mat-icon>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput
+          placeholder="State"
+          formControlName="state"
+          >
+          
+        <mat-icon matSuffix>home</mat-icon>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput
+          placeholder="Pin"
+          formControlName="pin"
+          >
+          
+        <mat-icon matSuffix>fiber_pin</mat-icon>
+      </mat-form-field>
+      <br>
+      <mat-radio-group formControlName="type">
+        <label>Type:   </label>
+        <mat-radio-button value="1">Veg</mat-radio-button>
+        <mat-radio-button value="2">Non-Veg</mat-radio-button>
+        <mat-radio-button value="3">Both</mat-radio-button>
+      </mat-radio-group>
+      <br>
+      <mat-form-field>
+        <label>Open Time :</label>
+        <input matInput type="time"
+          placeholder="Open Time"
+          formControlName="otime"
+          >
+  
+          <mat-icon matSuffix>access_pin</mat-icon>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label>Close Time :</label>
+        <input matInput type="time"
+          placeholder="Close Time"
+          formControlName="ctime"
+          >
+          <mat-icon matSuffix>schedule</mat-icon>
+      </mat-form-field>
+      <br>
+      <mat-radio-group formControlName="Status">
+        <label>Status</label>
+        <mat-radio-button value="1">Open</mat-radio-button>
+        <mat-radio-button value="2">Close</mat-radio-button>
+        
+      </mat-radio-group>
+      <br>
+      <div class="button-row">
+        <button mat-raised-button class="btn" type="submit" routerLink="/vendor" >Submit</button>
+        <button mat-raised-button class="btn btn1"  >Close</button>
+      </div>
+    </form>
+    </div>
+    
   </div>
-</form>
+</div>

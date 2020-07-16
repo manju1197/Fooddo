@@ -20,13 +20,36 @@ mat-sidenav-content {
     margin-top: 20px;
     // display: block;
     width: 80%;
-    margin: 3px auto;
+    // margin: 3px auto;
     background-color: black;
     border: 1px solid white;
     padding: 10px;
     color: white;
     font-size: 20px !important;
+    
   }
+  .btn{
+      background-color: black;
+      border: 1px solid white;
+    padding: 10px;
+    color: white;
+    font-size: 20px !important;
+    margin-top:5px;
+    width: 100%;
+
+  }
+  .image{
+    width: 210px;
+    height: 300px;
+}
+.header{
+    text-align: center;
+    // font-weight: bold;
+    font-size: 30px;
+  }
+card{
+    margin-left: 0px !important;
+}
 @media (max-width: 767px)  {
     .sidebar{
         position: fixed;

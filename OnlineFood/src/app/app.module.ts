@@ -32,6 +32,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ModalComponent } from './component/modal/modal.component';
 import { SharedService} from './component/login/shared.service';
 import { OrderlistComponent } from './component/orderlist/orderlist.component';
+import { ProductorderComponent } from './component/productorder/productorder.component';
 
 
 
@@ -49,6 +50,7 @@ import { OrderlistComponent } from './component/orderlist/orderlist.component';
     AddItemComponent,
     ModalComponent,
     OrderlistComponent,
+    ProductorderComponent,
    
   ],
   imports: [

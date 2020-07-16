@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div class="container">
+    <div class="card card1">
+        <div card-header>
+            <h1>Product Order Details </h1>
+
+        </div>
+        <div class="card-body">
+            <form class="form-container" >
+                <mat-form-field *ngFor="let arr of arrayList">
+                    <label>Product Name : </label>
+                     <h3>{{arr.name}}</h3>      
+                   
+                </mat-form-field><br>
+                    <mat-form-field>
+                        <label>Quantity :   </label>
+                        <input matInput formControlName="qty" type="number">
+                    </mat-form-field><br>
+                    <mat-form-field *ngFor="let arr of arrayList">
+                        <label>Calculated Amount :   </label>
+                        <h3>{{arr.price}}</h3>
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <label>Discount :   </label>
+                        <input matInput formControlName="discount" type="number">
+                    </mat-form-field><br>
+                    <mat-form-field>
+                        <label>Final Amount :   </label>
+                        <input matInput formControlname="final_amt" type="number">
+                    </mat-form-field><br>
+            <div>
+                <button mat-raised-button class="btn">Place Order</button>
+            </div>
+                </form>
+
+        </div>
+    </div>
+
+</div>
+<app-footer></app-footer>

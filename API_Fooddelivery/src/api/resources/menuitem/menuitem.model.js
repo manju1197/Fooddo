@@ -17,9 +17,9 @@ Categoryname:{
 //     required:true
 // },
 
-// url:{
-//     type:String
-//  }
+image:{
+    type:String
+ },
 price:{
     type:Number
 },

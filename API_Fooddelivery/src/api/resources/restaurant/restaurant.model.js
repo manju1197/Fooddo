@@ -9,10 +9,13 @@ name:{
     type:String,
     required :true
 },
-regId:{
-    ref:'User',
-        type:Schema.Types.ObjectId,
-        required:true
+// regId:{
+//     ref:'User',
+//         type:Schema.Types.ObjectId,
+//         required:true
+// },
+url:{
+    type:String
 },
 address:{
     type:String
@@ -31,11 +34,11 @@ contact:{
     required:true,
     unique:true
 },
-regId:{
-    ref:'User',
-    type:Schema.Types.ObjectId,
-    required:true
-},
+// regId:{
+//     ref:'User',
+//     type:Schema.Types.ObjectId,
+//     required:true
+// },
 type:{
     type:String,  
 },

@@ -17,7 +17,7 @@ interface Category {
 export class AddItemComponent implements OnInit {
 Categoryname: string;
   hide = true;
-  addList:any;
+  addList:any=[];
 addForm:FormGroup;
 
 
@@ -47,7 +47,7 @@ addForm:FormGroup;
       Categoryname:['',Validators.required],
       name:['',Validators.required],
       price:['',Validators.required],
-      // image:['',Validators.required],
+      image:['',Validators.required],
       rating:['',Validators.required],
       
     })

@@ -1,7 +1,7 @@
 <app-header></app-header>
 
   <div class="row">
-  <div class="col-4">
+  <div class="col-2">
 <div class="sidebar">
   <h2>Vendor Dashboard</h2>
 <ul>
@@ -13,33 +13,32 @@
 </ul>
  </div>
  </div>
- <div lass="col-8">      
+ <div class="col-10">      
    
-     
-      <ng-container *ngIf="posts.length; else elseTemplate">
+     <div class="container">
+       <div class="row">
+         <div class="col-md-3" *ngFor="let arr of arrayList" style="margin-top:30px;">
+          <div class="card">
+            <div class="card-body">
+              <h1 class="header">{{arr.Categoryname}}</h1>
+              <img src ="assets/images/{{arr.image}}" class="image">
+              <h4>{{arr.name}}</h4>
+              <h4>{{arr.price}}</h4>
+             <h4><mat-icon>stars</mat-icon>{{arr.rating}}</h4> 
+            </div>
+           <div class="card-footer">
+            <button mat-raised-button class="btn" routerLink="/product">Order</button>
+           </div>
 
-        <ul class="list-group">
-            <li class="list-group-item" *ngFor="let post of posts; let i = index">
-              <div class="card" style="width: 18rem;">
-                <h5 class="card-title">{{post.category}}</h5>
-                <img src="{{post.image}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  
-                  <p class="card-text">{{post.Itemname}}</p>
-                 <p class="card-text">{{post.price}}</p>
-                </div>
-              </div>
-            </li>
-        </ul>
-    
-    </ng-container>
-    <ng-template #elseTemplate>
-    
-        <div class="alert alert-danger" role="alert">
-            No Post Found!
-        </div>
-    
-    </ng-template>
+          </div>
+
+         </div>
+
+       </div>
+
+     </div>
+      
+   
 
 
 

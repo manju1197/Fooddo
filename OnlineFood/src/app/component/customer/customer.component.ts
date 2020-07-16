@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ModalService } from '../modal/modal.service';
+import { Modal } from '../modal/modal';
 
 @Component({
   selector: 'app-customer',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private http:HttpClient,
+    private modalService:ModalService) { }
+cafeList:any =[];
   ngOnInit(): void {
+    this.modalService.getHotel().subscribe(data =>{
+      this.cafeList =data;
+      console.log(this.cafeList);
+    })
   }
 
 }
