@@ -33,6 +33,7 @@ import { ModalComponent } from './component/modal/modal.component';
 import { SharedService} from './component/login/shared.service';
 import { OrderlistComponent } from './component/orderlist/orderlist.component';
 import { ProductorderComponent } from './component/productorder/productorder.component';
+import { CategoryComponent } from './component/add-item/category/category.component';
 
 
 
@@ -51,6 +52,7 @@ import { ProductorderComponent } from './component/productorder/productorder.com
     ModalComponent,
     OrderlistComponent,
     ProductorderComponent,
+    CategoryComponent,
    
   ],
   imports: [

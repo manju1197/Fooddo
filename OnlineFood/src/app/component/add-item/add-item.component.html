@@ -1,16 +1,29 @@
 
         
             <mat-card class="card">
-                <form  class="form-container"  (ngSubmit)="Save()" novalidate [formGroup]="addForm" >
+                <form  class="form-container"  (ngSubmit)="Save() " novalidate [formGroup]="addForm" >
                     <mat-form-field>
                         <mat-label>Category</mat-label>
+                      
                         <mat-select formControlName="Categoryname" name="food">
-                          <mat-option *ngFor="let food of category" [value]="food.value">
-                            {{food.viewValue}}
+                          <mat-option *ngFor="let food of List" [value]="food">
+                            {{food.name}}
                           </mat-option>
                         </mat-select>
+                        <!-- <mat-select formControlName="user">
+                          <mat-option *ngFor="let user of UserList" [value]="user">
+                            {{user.name}}
+                          </mat-option>
+                        </mat-select> -->
                       </mat-form-field>
-                      <p> Selected Category: {{Categoryname} }</p>
+                      <br>
+                  
+                        <button mat-raised-button class="butn" (click)="openDialog()">Create</button>
+                   
+                        
+                    
+                    
+                      
                       
                 <br>
     
@@ -45,7 +58,7 @@
                         
                       </mat-form-field>
                       <div >
-                        <button  mat-raised-button  class="btn" type="submit"  mat-dialog-close>Save</button>
+                        <button  mat-raised-button  class="btn" type="submit"  [mat-dialog-close]>Save</button>
                         <button  mat-raised-button  class=" btn btn1" (click)="onNoClick()">Close</button>
                       </div>
                       

@@ -1,0 +1,7 @@
+<form class="form-container" (ngSubmit)="Add()" novalidate [formGroup]="Form">
+    <mat-form-field>
+        <label>Category Name :    </label>
+        <input matInput type="String" formControlName="name">
+    </mat-form-field>
+    <button mat-raised-button type="submit" [mat-dialog-close] > Add</button>
+</form>

@@ -23,4 +23,10 @@ export default{
             console.log(err);
             }
         },
+        findByTransaction(req,res,next){
+                let {id} =  req.params;
+                Transaction.find({'regId':id}).then(data => res.json(data))
+                .catch(err => res.status(500).json(err));
+            }
+
 }

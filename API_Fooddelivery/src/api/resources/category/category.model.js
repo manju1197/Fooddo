@@ -7,11 +7,11 @@ name:{
     type:String,
     required :true
 },
-createdBy:{
-    ref:'vendor',
-    type:Schema.Types.ObjectId,
-    required:true
-},
+// createdBy:{
+//     ref:'vendor',
+//     type:Schema.Types.ObjectId,
+//     required:true
+// },
 created_dt:{
     type:Date,
     default:Date.now

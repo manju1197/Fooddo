@@ -7,7 +7,7 @@ name:{
     type:String,
     required :true
 },
-Categoryname:{
+CategoryId:{
    type:String,
     required:true
 },

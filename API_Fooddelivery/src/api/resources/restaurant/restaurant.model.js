@@ -34,11 +34,11 @@ contact:{
     required:true,
     unique:true
 },
-// regId:{
-//     ref:'User',
-//     type:Schema.Types.ObjectId,
-//     required:true
-// },
+regId:{
+    ref:'User',
+    type:Schema.Types.ObjectId,
+    required:true
+},
 type:{
     type:String,  
 },

@@ -6,17 +6,17 @@
 			<span class="navbar-toggler-icon" > </span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarid">
-		<ul class="navbar-nav  ml-auto">
+		<ul class="navbar-nav  ml-auto" *ngIf=!isHidden>
 			
 
             <button
             mat-raised-button
             color="primary"
             class="login-button">
-           <a>Profile</a>
+           <a>{{userObj.name}}</a>
           </button>
 			
-			<li class="nav-item dropdown">
+			<li class="">
                 <button
                 mat-raised-button
                 color="primary"

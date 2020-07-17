@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ModalService } from './modal.service';
+import { SharedService } from '../login/shared.service';
 
 @Component({
   selector: 'app-modal',
@@ -10,13 +11,18 @@ import { ModalService } from './modal.service';
 export class ModalComponent implements OnInit {
 addForm:FormGroup;
   constructor(private fb:FormBuilder,
-    private modalService:ModalService) { }
+    private modalService:ModalService,
+    private sharedService:SharedService) { }
 hotelList:any =[];
+CurrentUser:any ={};
   ngOnInit(): void {
+    
+    this.getCurrentUser();
   }
   createForm(){
     this.addForm = this.fb.group({
       restaurant:['',Validators.required],
+      regId:['',Validators.required],
       address:['',Validators.required],
       city:['',Validators.required],
       state:['',Validators.required],
@@ -37,5 +43,10 @@ hotelList:any =[];
   //     this.createForm.close();
   //   }
   }
+  getCurrentUser(){
+    this.sharedService.currentData.subscribe(data => {
+      this.CurrentUser =data}
+    )
+  };
 
 }

@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from './login.service';
 import {User} from './login'
 import { from } from 'rxjs';
+import { SharedService } from './shared.service';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,8 @@ user = new User();
     private _snackBar: MatSnackBar,
     private  loginService:LoginService,
     private router :Router,
-    private route:ActivatedRoute) { 
+    private route:ActivatedRoute,
+    private sharedService :SharedService) { 
      
     }
 
@@ -42,7 +44,7 @@ user = new User();
       this._snackBar.open('login Successful', 'Success', {
         duration: 2000,
       });
-
+this.sharedService.updateMessage(data);
       // this.router.navigate(['user']);
       // console.log(data);
       if(this.loginForm.value.role == "customer"){

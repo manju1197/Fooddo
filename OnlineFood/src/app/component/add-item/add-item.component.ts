@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup, ControlValueAccessor, NgControl, Validators} fro
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { AdditemService} from './additem.service';
 import { Additem } from './additem';
+import { CategoryComponent } from './category/category.component';
 interface Category {
   value: string;
   viewValue: string;
@@ -20,31 +21,32 @@ Categoryname: string;
   addList:any=[];
 addForm:FormGroup;
 
-
+List:any[];
 
 
   constructor(public dialogRef: MatDialogRef<AddItemComponent>,
     private fb:FormBuilder,
-    private addService:AdditemService
+    private addService:AdditemService,
+    public dialog:MatDialog
     ) {
       
      }
 
   ngOnInit(): void {
     this.createForm();
+    this.addService.getCategory().subscribe(data => {
+      this.List = data;
+     console.log(this.List);
+    
+   })
   }
-  category: Category[] = [
-    {value: 'Snacks', viewValue: 'Snacks'},
-    {value: 'Main Course', viewValue: 'Main Course'},
-    {value: 'Drinks', viewValue: 'Drinks'},
-    {value: 'Desert', viewValue: 'Desert'}
-  ];
+ 
   onNoClick(): void {
     this.dialogRef.close();
   }
   createForm(){
     this.addForm = this.fb.group({
-      Categoryname:['',Validators.required],
+      CategoryId:['',Validators.required],
       name:['',Validators.required],
       price:['',Validators.required],
       image:['',Validators.required],
@@ -60,6 +62,13 @@ addForm:FormGroup;
   },
   err=>console.log(err));
  }
+ openDialog() {
+  const dialogRef = this.dialog.open(CategoryComponent);
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log(`Dialog result: ${result}`);
+  });
+}
 
  }
 

@@ -1,5 +1,5 @@
 export class Additem {
-    Categoryname:String;
+    CategoryId:String;
     name:String;
     image:String;
     price:Number;

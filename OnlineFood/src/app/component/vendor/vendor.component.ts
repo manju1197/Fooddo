@@ -2,6 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { AddItemComponent } from '../add-item/add-item.component';
 import { AdditemService} from '../add-item/additem.service';
+import { SharedService } from '../login/shared.service';
 export interface DialogData {
   Itemname :string;
  image:string;
@@ -17,12 +18,14 @@ export class VendorComponent implements OnInit {
  
   
   constructor(public dialog: MatDialog,
-    private addService:AdditemService) { }
+    private addService:AdditemService,
+ ) { }
  Itemname :string;
  image:string;
  price:number;
  selectedValue:string;
  arrayList:any =[];
+
 //  arrayList: Item[];
   ngOnInit(): void {
     this.addService.getItem().subscribe(data =>{
@@ -30,6 +33,7 @@ export class VendorComponent implements OnInit {
       console.log(this.arrayList);
     })
   }
+ 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddItemComponent, {
       width: '1050px',

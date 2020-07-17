@@ -1,6 +1,6 @@
 export class Modal {
     name:String;
-   
+   regId:String;
     url:String;
     address:String
     city:String
