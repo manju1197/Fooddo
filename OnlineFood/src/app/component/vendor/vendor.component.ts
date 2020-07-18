@@ -3,6 +3,8 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { AddItemComponent } from '../add-item/add-item.component';
 import { AdditemService} from '../add-item/additem.service';
 import { SharedService } from '../login/shared.service';
+import { Order } from '../placeorder/order';
+import { Router } from '@angular/router';
 export interface DialogData {
   Itemname :string;
  image:string;
@@ -19,21 +21,38 @@ export class VendorComponent implements OnInit {
   
   constructor(public dialog: MatDialog,
     private addService:AdditemService,
+    private sharedService:SharedService,
+    private router:Router
  ) { }
  Itemname :string;
  image:string;
  price:number;
  selectedValue:string;
  arrayList:any =[];
+ CurrentProduct:any={};
 
 //  arrayList: Item[];
   ngOnInit(): void {
     this.addService.getItem().subscribe(data =>{
       this.arrayList = data;
       console.log(this.arrayList);
-    })
+      
+  this.sharedService.updateProduct(data);
+ }
+    )
   }
- 
+  getProduct(){
+    this.sharedService.Pdata.subscribe(data => {
+      this.CurrentProduct =data}
+    );
+  }
+  POrder(item){
+
+   item = this.CurrentProduct._id;
+   this.router.navigate(['/porder']);
+
+  }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(AddItemComponent, {
       width: '1050px',
@@ -44,5 +63,7 @@ export class VendorComponent implements OnInit {
       console.log('The dialog was closed');
       
     });
+  
+    }
   }
-}
+

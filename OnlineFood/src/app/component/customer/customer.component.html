@@ -12,8 +12,8 @@
            
           <h4><strong>Pin:  </strong>{{arr.pin}}</h4>
           <h4><strong>Type: </strong>{{arr.type}}</h4>
-          <h4><strong>Open Time: </strong>{{arr.opentime}}</h4>
-          <h4><strong>Close Time: </strong>{{arr.closetime}}</h4>
+          <h4><strong>Open Time: </strong>{{arr.opentime| date:'shortTime' }}</h4>  
+          <h4><strong>Close Time: </strong>{{arr.closetime| date:'shortTime' }}</h4>
           <h4><strong>Status:  </strong>{{arr.status}}</h4>
          </div>
         <div class="card-footer">

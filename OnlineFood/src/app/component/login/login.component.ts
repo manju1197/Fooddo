@@ -42,17 +42,18 @@ user = new User();
   login(){
     this.loginService.loginUser( this.loginForm.value).subscribe(data=>{
       this._snackBar.open('login Successful', 'Success', {
-        duration: 2000,
+        duration: 1000,
       });
 this.sharedService.updateMessage(data);
       // this.router.navigate(['user']);
       // console.log(data);
-      if(this.loginForm.value.role == "customer"){
+      if(this.loginForm.value.role == "Customer"){
+        // this.router.navigate(['/view']);
         this.router.navigate(['/customer'],{relativeTo:this.route});
       }
   else if(this.loginForm.value.role== "vendor"){
-    this.router.navigate(['/modal']);
-    // this.router.navigate(['/vendor'],{relativeTo:this.route});
+    // this.router.navigate(['/modal']);
+    this.router.navigate(['/vendor'],{relativeTo:this.route});
   }
   else{
     this.router.navigate(['/admin'],{relativeTo:this.route});
@@ -71,10 +72,22 @@ this.sharedService.updateMessage(data);
     })
   }
   signup(){
-    this.signupForm.value.role ="user";
+  
     this.loginService.createUser( this.signupForm.value).subscribe(data=>{
-      alert("SignUp Successful");
-      console.log(data);
+      this._snackBar.open('login Successful', 'Success', {
+        duration: 1000,
+      });
+      if(this.signupForm.value.role == "Customer"){
+        this.router.navigate(['/view']);
+        // this.router.navigate(['/customer'],{relativeTo:this.route});
+      }
+  else if(this.signupForm.value.role== "vendor"){
+    this.router.navigate(['/modal']);
+    // this.router.navigate(['/vendor'],{relativeTo:this.route});
+  }
+  else{
+    this.router.navigate(['/admin'],{relativeTo:this.route});
+  }
   
     },
    err=>console.log(err)) ;

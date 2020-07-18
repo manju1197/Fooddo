@@ -6,19 +6,14 @@
 
         </div>
         <div class="card-body">
-            <form class="form-container" >
-                <mat-form-field *ngFor="let arr of arrayList">
+            <form class="form-container" (ngSubmit)="PlaceOrder()"  novalidate [formGroup]="ProductForm" >
+                <mat-form-field >
                     <label>Product Name : </label>
-                     <h3>{{arr.name}}</h3>      
-                   
-                </mat-form-field><br>
-                    <mat-form-field>
-                        <label>Quantity :   </label>
-                        <input matInput formControlName="qty" type="number">
-                    </mat-form-field><br>
-                    <mat-form-field *ngFor="let arr of arrayList">
+                     <h3>{{arrayList.name}}</h3>   
+                    </mat-form-field><br>   
+                     <mat-form-field >
                         <label>Calculated Amount :   </label>
-                        <h3>{{arr.price}}</h3>
+                        <h3>{{arrayList.price}}</h3>
                     </mat-form-field><br>
                     <mat-form-field>
                         <label>Discount :   </label>
@@ -28,8 +23,17 @@
                         <label>Final Amount :   </label>
                         <input matInput formControlname="final_amt" type="number">
                     </mat-form-field><br>
+                
+                    <mat-form-field>
+                        <label>Quantity :   </label>
+                        <input matInput formControlName = "quantity">
+                    </mat-form-field><br>
+                    <mat-form-field >
+                        <label>Total :   </label>
+                     <h3> {{orderList.total}}</h3>  
+                    </mat-form-field><br>
             <div>
-                <button mat-raised-button class="btn">Place Order</button>
+                <button mat-raised-button type="submit" class="btn"  >Place Order</button>
             </div>
                 </form>
 

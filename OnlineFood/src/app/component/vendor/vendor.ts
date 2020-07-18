@@ -1,14 +1,13 @@
+import { Category } from '../add-item/category';
+
 export class Vendor {
     name:String;
-   
-    regId:String
-    address:String
-    city:String
-    state:String
-    pin:Number
-    contact:Number
-    type:String
-    opentime:Date
-    closetime:Date
-    status:String
+    CategoryId:String;
+    RestroId:String;
+    price:number;
+    url:String;
+    isSpecial:boolean;
+    rating:number;
+    status:String;
+
 }

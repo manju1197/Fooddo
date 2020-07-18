@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { number } from 'joi';
+
 import User from '../user/user.model';
 const Schema = mongoose.Schema;
 
@@ -9,11 +9,7 @@ name:{
     type:String,
     required :true
 },
-// regId:{
-//     ref:'User',
-//         type:Schema.Types.ObjectId,
-//         required:true
-// },
+
 url:{
     type:String
 },
@@ -41,6 +37,9 @@ regId:{
 },
 type:{
     type:String,  
+},
+url:{
+    type:String,
 },
 opentime:{
     type:Date

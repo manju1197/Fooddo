@@ -7,15 +7,15 @@ name:{
     type:String,
     required :true
 },
-CategoryId:{
+Categoryname:{
    type:String,
     required:true
 },
-// restroId:{
-//     ref:'vendor',
-//     type:Schema.Types.ObjectId,
-//     required:true
-// },
+restroId:{
+    ref:'vendor',
+    type:Schema.Types.ObjectId,
+    required:true
+},
 
 image:{
     type:String

@@ -3,9 +3,9 @@ export default{
     validationSchema(body){
         const schema = Joi.object().keys({
           
-           CategoryId:Joi.string().required(),
+           Categoryname:Joi.string().required(),
            name:Joi.string().required(),
-        //    restroId:Joi.string().required(),
+           restroId:Joi.string().required(),
         image:Joi.string().required(),
            price:Joi.number().required(),
            rating:Joi.number().required(),

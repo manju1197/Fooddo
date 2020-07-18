@@ -17,17 +17,20 @@
    
      <div class="container">
        <div class="row">
-         <div class="col-md-3" *ngFor="let arr of arrayList" style="margin-top:30px;">
+         <div class="col-md-3 col-lg-3 col-sm-6" *ngFor="let arr of arrayList" style="margin-top:30px;">
           <div class="card">
             <div class="card-body">
               <h1 class="header">{{arr.Categoryname}}</h1>
               <img src ="assets/images/{{arr.image}}" class="image">
-              <h4>{{arr.name}}</h4>
-              <h4>{{arr.price}}</h4>
-             <h4><mat-icon>stars</mat-icon>{{arr.rating}}</h4> 
+              <div class="arrange">
+                <h2>{{arr.name}}</h2>
+                <h2 style="margin-left: 40px;">₹{{arr.price}}</h2>
+               <h2 style="margin-left: 35px;"><mat-icon>stars</mat-icon>{{arr.rating}}</h2> 
+              
+             </div>
             </div>
            <div class="card-footer">
-            <button mat-raised-button class="btn" routerLink="/product">Order</button>
+            <button mat-raised-button class="btn" (click)="POrder(arr)">Order</button>
            </div>
 
           </div>

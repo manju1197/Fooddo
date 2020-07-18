@@ -32,10 +32,13 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ModalComponent } from './component/modal/modal.component';
 import { SharedService} from './component/login/shared.service';
 import { OrderlistComponent } from './component/orderlist/orderlist.component';
-import { ProductorderComponent } from './component/productorder/productorder.component';
+
 import { CategoryComponent } from './component/add-item/category/category.component';
+import { ViewprofileComponent } from './component/viewprofile/viewprofile.component';
+import { PlaceorderComponent } from './component/placeorder/placeorder.component';
+import {MatNativeDateModule} from '@angular/material/core';
 
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -51,8 +54,10 @@ import { CategoryComponent } from './component/add-item/category/category.compon
     AddItemComponent,
     ModalComponent,
     OrderlistComponent,
-    ProductorderComponent,
+
     CategoryComponent,
+    ViewprofileComponent,
+    PlaceorderComponent,
    
   ],
   imports: [
@@ -73,7 +78,10 @@ import { CategoryComponent } from './component/add-item/category/category.compon
     MatSidenavModule,
     MatListModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+ 
   
   
   ],

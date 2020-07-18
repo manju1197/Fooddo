@@ -3,12 +3,14 @@ export default{
     validationSchema(body){
         const schema = Joi.object().keys({
             name:Joi.string().required(),
+            regId:Joi.string().required(),
             url:Joi.string().required(),
             address:Joi.string().required(),
            city:Joi.string().required(),
            state:Joi.string().required(),
            pin:Joi.number().required(),
             contact:Joi.number().required(),
+            regId:Joi.string().required(),
             type:Joi.string().required(),
             status:Joi.string().required(),
             opentime:Joi.date().required(),

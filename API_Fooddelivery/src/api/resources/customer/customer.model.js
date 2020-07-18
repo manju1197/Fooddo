@@ -34,6 +34,11 @@ contact:{
 gender:{
     type:String
 },
+email:{
+    type:String,
+    required:true,
+    unique:true
+},
 created_dt:{
     type:Date,
     default:Date.now

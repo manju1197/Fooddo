@@ -32,4 +32,4 @@ isActive:{
     default:true
 }
 },{collection : 'Order'});
-export default new mongoose.model('Order',OrderSchema);
+export default new mongoose.model('POrder',OrderSchema);

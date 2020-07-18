@@ -8,7 +8,9 @@ import { AdminComponent } from './component/admin/admin.component';
 import { AddItemComponent } from './component/add-item/add-item.component';
 import { OrderlistComponent } from './component/orderlist/orderlist.component';
 import { ModalComponent } from './component/modal/modal.component';
-import { ProductorderComponent } from './component/productorder/productorder.component';
+// import { ProductorderComponent } from './component/productorder/productorder.component';
+import { ViewprofileComponent } from './component/viewprofile/viewprofile.component';
+import { PlaceorderComponent } from './component/placeorder/placeorder.component';
 
 
 const routes: Routes = [
@@ -21,7 +23,10 @@ const routes: Routes = [
   {path:'additem',component:AddItemComponent},
   {path:'order',component:OrderlistComponent},
   {path:'modal',component:ModalComponent},
-  {path:'product',component:ProductorderComponent}
+  
+  {path:'view',component:ViewprofileComponent},
+  {path:'porder',component:PlaceorderComponent}
+
 ];
 
 @NgModule({

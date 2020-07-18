@@ -20,7 +20,7 @@ FinalAmt:{
     type:Number
 },
 discount:{
-    type:number
+    type:Number
 },
 created_dt:{
     type:Date,

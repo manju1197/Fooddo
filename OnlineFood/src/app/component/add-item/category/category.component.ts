@@ -31,8 +31,12 @@ Add(){
     this.List = data;
    console.log(this.List);
    alert('category added successfully');
- },
- err=>console.log(err));
+   
+ }),
+ this.addService.getCategory().subscribe(data => {
+this.sharedService.updatecategory(data);
+}),
+ err=>console.log(err);
 }
 getCurrentUser(){
   this.sharedService.currentData.subscribe(data => {
