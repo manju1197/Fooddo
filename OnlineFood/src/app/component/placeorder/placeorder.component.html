@@ -7,33 +7,35 @@
         </div>
         <div class="card-body">
             <form class="form-container" (ngSubmit)="PlaceOrder()"  novalidate [formGroup]="ProductForm" >
-                <mat-form-field >
-                    <label>Product Name : </label>
-                     <h3>{{arrayList.name}}</h3>   
-                    </mat-form-field><br>   
-                     <mat-form-field >
-                        <label>Calculated Amount :   </label>
-                        <h3>{{arrayList.price}}</h3>
-                    </mat-form-field><br>
+               <div>
+                
+                <h3><label>Product Name : </label>{{productdetails.name}}</h3>   
+               </div>
+                    
+                  <div>
+                    <label>Calculated Amount :&nbsp;   </label>
+                    <h3>{{productdetails.price}}&nbsp;/-</h3>
+                  </div>
+                        
+                  
                     <mat-form-field>
                         <label>Discount :   </label>
                         <input matInput formControlName="discount" type="number">
                     </mat-form-field><br>
-                    <mat-form-field>
-                        <label>Final Amount :   </label>
+                    <!-- <mat-form-field>
+                        <label>Final Amount : &nbsp;   </label>
                         <input matInput formControlname="final_amt" type="number">
-                    </mat-form-field><br>
+                    </mat-form-field><br> -->
                 
                     <mat-form-field>
                         <label>Quantity :   </label>
                         <input matInput formControlName = "quantity">
                     </mat-form-field><br>
-                    <mat-form-field >
-                        <label>Total :   </label>
-                     <h3> {{orderList.total}}</h3>  
-                    </mat-form-field><br>
+                   
+                       
+                    
             <div>
-                <button mat-raised-button type="submit" class="btn"  >Place Order</button>
+                <button mat-raised-button type="submit" class="btn"  >Order Now</button>
             </div>
                 </form>
 

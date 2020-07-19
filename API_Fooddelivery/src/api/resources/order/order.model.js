@@ -22,6 +22,9 @@ FinalAmt:{
 discount:{
     type:Number
 },
+quantity:{
+    type:Number
+},
 created_dt:{
     type:Date,
     default:Date.now

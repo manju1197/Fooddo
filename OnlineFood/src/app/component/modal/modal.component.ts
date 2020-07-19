@@ -32,7 +32,7 @@ HotelObj:Modal =  new Modal();
   createForm(){
     this.addForm = this.fb.group({
       restaurant:['',Validators.required],
-      regId:['',Validators.required],
+    
       url:['',Validators.required],
       address:['',Validators.required],
       city:['',Validators.required],
@@ -65,7 +65,7 @@ HotelObj:Modal =  new Modal();
       console.log('Hotel added Successfully');
     }),
     
-    this.snackBar.open('Sign Up Sucessfully', '', {
+    this.snackBar.open('Sign Up Sucessfully', 'Restaurant Added', {
       duration: 1000,
     });
     this.router.navigate(['/login']);

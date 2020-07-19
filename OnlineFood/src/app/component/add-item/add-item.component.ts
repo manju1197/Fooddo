@@ -76,7 +76,7 @@ categoryObj:Additem= new Additem();
   }
  Save(){
   
-  this.categoryObj.Categoryname =this.addForm.value.Categoryname;
+  this.categoryObj.Categoryname =this.addForm.value.Categoryname.name;
   this.categoryObj.restroId = this.UserCurrent._id;
   this.categoryObj.name = this.addForm.value.name;
   this.categoryObj.price= this.addForm.value.price;
@@ -87,9 +87,12 @@ categoryObj:Additem= new Additem();
      this.addList = data;
     console.log(this.addList);
     alert('menu added successfully');
-  })
+  }),
+  this.addService.getItem().subscribe(data =>{
+this.sharedService.updateProduct(data);
+    console.log(data);
+})
 }
- 
  openDialog() {
   const dialogRef = this.dialog.open(CategoryComponent);
 

@@ -4,6 +4,7 @@ export class Order {
     Calculated_Amt:number;
     discount:number;
     finalAmount:number;
+    quantity:number;
     }
 
 export class Order_P{

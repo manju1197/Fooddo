@@ -7,7 +7,7 @@ export default{
             
            CalculatedAmt:Joi.number().required(),
             FinalAmt:Joi.number().required(),
-            
+            quantity:Joi.number().required(),
             discount:Joi.number().required()
            
         });

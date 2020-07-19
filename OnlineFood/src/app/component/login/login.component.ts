@@ -77,6 +77,7 @@ this.sharedService.updateMessage(data);
       this._snackBar.open('login Successful', 'Success', {
         duration: 1000,
       });
+      this.sharedService.updateMessage(data);
       if(this.signupForm.value.role == "Customer"){
         this.router.navigate(['/view']);
         // this.router.navigate(['/customer'],{relativeTo:this.route});
@@ -91,6 +92,7 @@ this.sharedService.updateMessage(data);
   
     },
    err=>console.log(err)) ;
+   alert('err');
   }
   Role: string;
   roles: string[] = ['Admin','Restaurant Owner','Customer'];

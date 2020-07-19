@@ -7,7 +7,7 @@
 <ul>
   <button mat-raised-button (click)="openDialog()" class="login-button">Add item</button>
   <br>
-       <button mat-raised-button class="login-button" >View item</button>
+       <button mat-raised-button class="login-button" (click)="View()" >View item</button>
        <br>
        <button mat-raised-button class="login-button" >Order list</button>
 </ul>
@@ -30,7 +30,7 @@
              </div>
             </div>
            <div class="card-footer">
-            <button mat-raised-button class="btn" (click)="POrder(arr)">Order</button>
+            <button mat-raised-button class="btn" (click)="POrder(arr._id)">Order</button>
            </div>
 
           </div>

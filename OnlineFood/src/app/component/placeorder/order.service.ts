@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Order, Order_P } from './order';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Additem } from '../add-item/additem';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,6 @@ export class OrderService {
  getPorder():Observable<Order[]>{
   return this.http.get<Order[]>('http://localhost:3001/api/porder');
   }
-  
+ 
 }
+

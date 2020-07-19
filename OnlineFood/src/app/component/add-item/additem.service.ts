@@ -27,5 +27,8 @@ export class AdditemService {
   return this.http.get<Category[]>('http://localhost:3001/api/category');
  
 }
+getOneProduct(id):Observable<Additem>{
+  return this.http.get<Additem>('http://localhost:3001/api/menu/'+id);
+}
    
 }

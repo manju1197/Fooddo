@@ -48,8 +48,8 @@ export class VendorComponent implements OnInit {
   }
   POrder(item){
 
-   item = this.CurrentProduct._id;
-   this.router.navigate(['/porder']);
+
+   this.router.navigate(['/porder',item]);
 
   }
 
@@ -65,5 +65,11 @@ export class VendorComponent implements OnInit {
     });
   
     }
-  }
+    View(){
+      this.addService.getItem().subscribe(data =>{
+        
+        console.log(data);
+  })
+}
+}
 

@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="container">
+    <div class="card card1">
+        <div card-header>
+            <h1>Product Order Details </h1>
+
+        </div>
+        <div class="card-body">
+           
+               <div class="container">
+                
+                <h2><label>User Name :     </label>{{CurrentUser.name}}</h2>   
+               <br>
+                
+                 <h2><label>Order Product :   </label>{{CurrentProduct.name}}</h2>
+                 <br>
+                
+                  <h2><label>Order Product Price :    &nbsp;  </label>{{CurrentProduct.price}}&nbsp;/- </h2>
+             
+              <br>
+              
+                  <h2><label> Total Amount :  &nbsp;  </label> {{OrderList.total}}&nbsp;/- </h2>
+            
+              <br>
+                        
+               </div>   
+                    
+                       
+                    
+            <div>
+                <button mat-raised-button type="button" class="btn" (click)="Order()" >Place Order</button>
+            </div>
+              
+
+        </div>
+    </div>
+
+</div>
+<app-footer></app-footer>

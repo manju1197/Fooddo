@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../login/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +9,14 @@ import { SharedService } from '../login/shared.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private sharedService:SharedService) { }
+  constructor(private sharedService:SharedService,
+    private router:Router) { }
   isHidden:boolean;
   userObj:any ={};
+  CurrentUser:any ={};
   ngOnInit(): void {
     this.sharedService.currentData.subscribe(data => {
+      this.CurrentUser =data;
       if(data== ''){
         this.isHidden = true;
         this.userObj = null;
@@ -23,5 +27,13 @@ export class HeaderComponent implements OnInit {
       }
     })
   }
-
+ 
+Profile(){
+if(this.CurrentUser.role == "vendor"){
+  this.router.navigate(['/modal']);
+}
+else if(this.CurrentUser.role == "Customer"){
+  this.router.navigate(['/view']);
+}
+}
 }

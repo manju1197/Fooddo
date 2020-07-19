@@ -22,6 +22,16 @@ export default{
 
             console.log(err);
             }
-        }
+        },
+        findOne(req,res){
+            const id = req.params.id;
+            Menu.findById(id).then(emp => {
+                if(!emp){
+                    return res.status(400).json({err:"emp not found"});
+                }
+                return res.json(emp);
+            })
+            .catch(err => res.status(500).json(err));
+        },
        
     }

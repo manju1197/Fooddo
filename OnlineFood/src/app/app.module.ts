@@ -37,8 +37,11 @@ import { CategoryComponent } from './component/add-item/category/category.compon
 import { ViewprofileComponent } from './component/viewprofile/viewprofile.component';
 import { PlaceorderComponent } from './component/placeorder/placeorder.component';
 import {MatNativeDateModule} from '@angular/material/core';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+ 
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ClientComponent } from './component/client/client.component';
+import { OrderComponent } from './component/order/order.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +61,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     CategoryComponent,
     ViewprofileComponent,
     PlaceorderComponent,
+    ClientComponent,
+    OrderComponent,
    
   ],
   imports: [
@@ -80,7 +85,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatSelectModule,
     MatDialogModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatToolbarModule
  
   
   

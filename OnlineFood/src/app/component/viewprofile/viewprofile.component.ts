@@ -35,7 +35,7 @@ createForm(){
 }
 Save(){
   this.profileService.createUser( this.profileForm.value).subscribe(data=>{
-    this._snackBar.open('sign up Successful', 'Success', {
+    this._snackBar.open('sign up Successful', 'Client  Added', {
       duration: 2000,
     });
 }),
