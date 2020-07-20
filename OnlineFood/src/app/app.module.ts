@@ -42,6 +42,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ClientComponent } from './component/client/client.component';
 import { OrderComponent } from './component/order/order.component';
+import { ViewitemComponent } from './component/viewitem/viewitem.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { OrderComponent } from './component/order/order.component';
     PlaceorderComponent,
     ClientComponent,
     OrderComponent,
+    ViewitemComponent,
    
   ],
   imports: [

@@ -31,7 +31,7 @@ Porderobj:Order_P =new Order_P();
 CurrentUser:any={};
 CurrentProduct:any={};
 CurrentOrder:any={};
-array:any;
+Id:any;
   ngOnInit(): void {
  if(this.route.snapshot.paramMap.get('id')){
    this.ProductId = this.route.snapshot.paramMap.get('id');
@@ -39,6 +39,7 @@ array:any;
  if(this.ProductId != null){
    this.addService.getOneProduct(this.ProductId).subscribe(data =>{
      this.productdetails = data;
+     console.log(this.productdetails);
    },
    err =>{console.log(err);
   })
@@ -70,10 +71,16 @@ PlaceOrder(item){
   this.Orderobj.quantity = this.ProductForm.value.quantity;
   this.orderService.createOrder(this.Orderobj).subscribe(data =>{
     this.arrayList = data;
-    console.log(this.arrayList);
+    // console.log(this.arrayList);
     this.sharedService.updateOrder(data);
 alert('order added');
 });
+// this.orderService.getOrder().subscribe(data =>{
+//   this.arrayList = data;
+// });
+// this.sharedService.dataorder.subscribe(data =>{
+// this.arrayList  =data;
+// });
 this.router.navigate(['/ordernow',item]);
  
 }

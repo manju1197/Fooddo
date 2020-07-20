@@ -23,8 +23,8 @@ export class OrderComponent implements OnInit {
   OrderList:any ={};
   OrderId:any ={};
   ngOnInit(): void {
-    if(this.route.snapshot.paramMap.get('id')){
-      this.OrderId = this.route.snapshot.paramMap.get('id');
+    if(this.route.snapshot.paramMap.get('id2')){
+      this.OrderId = this.route.snapshot.paramMap.get('id2');
     }
     if(this.OrderId != null){
       this.orderService.getOneOrder(this.OrderId).subscribe(data =>{

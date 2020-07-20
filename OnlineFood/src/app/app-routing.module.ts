@@ -13,6 +13,7 @@ import { ViewprofileComponent } from './component/viewprofile/viewprofile.compon
 import { PlaceorderComponent } from './component/placeorder/placeorder.component';
 import { ClientComponent } from './component/client/client.component';
 import { OrderComponent } from './component/order/order.component';
+import { ViewitemComponent } from './component/viewitem/viewitem.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
   {path:'porder',component:PlaceorderComponent},
   {path:'porder/:id',component:PlaceorderComponent},
   {path:'ordernow',component:OrderComponent},
-  {path:'ordernow/:id',component:OrderComponent}
+  {path:'ordernow/:id',component:OrderComponent},
+  {path:'viewitem',component:ViewitemComponent}
 ];
 
 @NgModule({

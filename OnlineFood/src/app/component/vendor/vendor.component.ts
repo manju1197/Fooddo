@@ -65,11 +65,6 @@ export class VendorComponent implements OnInit {
     });
   
     }
-    View(){
-      this.addService.getItem().subscribe(data =>{
-        
-        console.log(data);
-  })
-}
+  
 }
 
