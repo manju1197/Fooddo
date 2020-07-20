@@ -23,20 +23,11 @@ export class OrderComponent implements OnInit {
   OrderList:any ={};
   OrderId:any ={};
   ngOnInit(): void {
-    if(this.route.snapshot.paramMap.get('id2')){
-      this.OrderId = this.route.snapshot.paramMap.get('id2');
-    }
-    if(this.OrderId != null){
-      this.orderService.getOneOrder(this.OrderId).subscribe(data =>{
-        this.CurrentOrder = data;
-      },
-      err =>{console.log(err);
-     })
-   
-    }
+  
     this.getCurrentUser();
  
     this.getProduct();
+    this.getOrder();
   }
   getCurrentUser(){
     this.sharedService.currentData.subscribe(data => {
@@ -49,13 +40,18 @@ getProduct(){
  
   });
 }
+getOrder(){
+  this.sharedService.orderProduct.subscribe(data=>{
+    this.CurrentOrder =data;
+  });
+}
 
     Order(){
       this.Porderobj.name = this.CurrentUser.name;
       this.Porderobj.OrderId=this.CurrentOrder._id;
       this.Porderobj.ProductId = this.CurrentProduct._id;
       
-      this.Porderobj.quantity= this.CurrentOrder._quantity;
+      this.Porderobj.quantity= this.CurrentOrder.quantity;
       this.Porderobj.Total= this.CurrentOrder.quantity * this.CurrentOrder.FinalAmt;
       this.orderService.createPorder(this.Porderobj).subscribe(data =>{
        this.OrderList =data;

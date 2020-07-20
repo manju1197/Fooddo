@@ -86,12 +86,10 @@ categoryObj:Additem= new Additem();
   this.addService.createItem(this.categoryObj).subscribe(data => {
      this.addList = data;
     console.log(this.addList);
+  
     alert('menu added successfully');
-  }),
-  this.addService.getItem().subscribe(data =>{
-this.sharedService.updateProduct(data);
-    console.log(data);
-})
+  })
+ 
 }
  openDialog() {
   const dialogRef = this.dialog.open(CategoryComponent);

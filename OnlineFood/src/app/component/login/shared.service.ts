@@ -8,8 +8,8 @@ export class SharedService {
   currentData = this.userData.asObservable();
   private catData = new BehaviorSubject('');
   typeData = this.catData.asObservable();
-  private Orderdata = new BehaviorSubject('');
-  dataorder = this.Orderdata.asObservable();
+  private order = new BehaviorSubject('');
+  orderProduct = this.order.asObservable();
   private Product = new BehaviorSubject('');
   Pdata= this.Product.asObservable();
   constructor() { }
@@ -19,9 +19,9 @@ export class SharedService {
   updatecategory(item:any){
     this.catData.next(item);
   }
-  updateOrder(item:any){
-    this.Orderdata.next(item);
-  }
+ updateOrder(item:any){
+   this.order.next(item);
+ }
   updateProduct(item:any){
     this.Product.next(item);
   }

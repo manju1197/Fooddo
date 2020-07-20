@@ -20,7 +20,8 @@ export class PlaceorderComponent implements OnInit {
     private orderService:OrderService,
     private snackBar:MatSnackBar,
     private route:ActivatedRoute,
-    private router:Router) { }
+    private router:Router,
+   ) { }
 ProductId:any ={};
 productdetails:any={};
 arrayList:any ={};
@@ -40,6 +41,7 @@ Id:any;
    this.addService.getOneProduct(this.ProductId).subscribe(data =>{
      this.productdetails = data;
      console.log(this.productdetails);
+     this.sharedService.updateProduct(data);
    },
    err =>{console.log(err);
   })
@@ -62,7 +64,7 @@ createForm(){
   discount:['',Validators.required]
  })
 }
-PlaceOrder(item){
+PlaceOrder(){
   this.Orderobj.name= this.productdetails.name;
   this.Orderobj.UserId= this.CurrentUser._id;
   this.Orderobj.CalculatedAmt=this.productdetails.price;
@@ -75,13 +77,8 @@ PlaceOrder(item){
     this.sharedService.updateOrder(data);
 alert('order added');
 });
-// this.orderService.getOrder().subscribe(data =>{
-//   this.arrayList = data;
-// });
-// this.sharedService.dataorder.subscribe(data =>{
-// this.arrayList  =data;
-// });
-this.router.navigate(['/ordernow',item]);
+
+this.router.navigate(['/ordernow']);
  
 }
 }

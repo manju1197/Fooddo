@@ -16,4 +16,7 @@ export class ModalService {
       return this.http.post<Modal>('http://localhost:3001/api/hotel/add',model);
      
    }
+   updateHotel(model):Observable<Modal>{
+    return this.http.put<Modal>('http://localhost:3001/api/hotel/add/'+model._id,model); 
+   }
 }

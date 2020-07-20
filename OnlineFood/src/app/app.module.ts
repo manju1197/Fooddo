@@ -43,6 +43,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ClientComponent } from './component/client/client.component';
 import { OrderComponent } from './component/order/order.component';
 import { ViewitemComponent } from './component/viewitem/viewitem.component';
+import { EditviewprofileComponent } from './component/editviewprofile/editviewprofile.component';
+import { EditmodalComponent } from './component/editmodal/editmodal.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,8 @@ import { ViewitemComponent } from './component/viewitem/viewitem.component';
     ClientComponent,
     OrderComponent,
     ViewitemComponent,
+    EditviewprofileComponent,
+    EditmodalComponent,
    
   ],
   imports: [

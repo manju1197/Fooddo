@@ -1,0 +1,133 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="card model" >
+    <div class="header">
+      <h1 >Registration Details</h1>
+    </div>
+    
+    <div class="card-body" >
+      <form class="form-container " *ngFor="let item of currentemployee"  (ngSubmit)="Save()" novalidate [formGroup]="addForm">
+          
+        <mat-form-field>
+          <!-- <label>Restaurant Name :   </label> -->
+            <input matInput
+              placeholder="Restaurant Name."
+              formControlName="restaurant" 
+              [(ngModel)]="item.restaurant"
+              >
+       </mat-form-field>
+       <br>
+       <div class="row shift">
+        <label>Restaurant Regno :   </label>
+        <h3>{{CurrentUser._id}}</h3>
+       </div>
+        
+   
+     <br>
+       <mat-form-field>
+         <!-- <label>Image url :    </label> -->
+        <input matInput
+          placeholder=" Restaurant Image."
+          formControlName="url"
+          [(ngModel)]="item.url"
+          >
+    </mat-form-field>
+    <br>
+       <mat-form-field>
+        <!-- <label>Address :    </label> -->
+        <input matInput
+          placeholder="Address"
+          formControlName="address"
+          [(ngModel)]="item.address">
+         
+        <mat-icon matSuffix>house</mat-icon>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <!-- <label>City :    </label> -->
+        <input matInput
+          placeholder="City"
+          formControlName="city"
+          [(ngModel)]="item.city">
+       
+        <mat-icon matSuffix>location_city</mat-icon>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <!-- <label>State :    </label> -->
+        <input matInput
+          placeholder="State"
+          formControlName="state"
+          [(ngModel)]="item.state" >
+          
+        <mat-icon matSuffix>home</mat-icon>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <!-- <label>Pin :    </label> -->
+        <input matInput
+          placeholder="Pin"
+          formControlName="pin"
+          [(ngModel)]="item.pin">
+          
+        <mat-icon matSuffix>fiber_pin</mat-icon>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <!-- <label>Pin :    </label> -->
+        <input matInput
+          placeholder="Contact"
+          formControlName="contact"
+          [(ngModel)]="item.contact" >
+          
+        <mat-icon matSuffix>call</mat-icon>
+      </mat-form-field>
+      <br>
+      <div>
+        <label id="example-radio-group-label" class="shift">Type :   </label>
+        <mat-radio-group formControlName="type"  [(ngModel)]="item.type">
+          <mat-radio-button  class="example-radio-button shift" value="Veg" >Veg</mat-radio-button>
+          <mat-radio-button  class="example-radio-button shift" value="Non-Veg" >Non-Veg</mat-radio-button>
+          <mat-radio-button   class="example-radio-button shift" value ="Both Veg & Non-Veg" >Both Veg & Non-Veg</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <br>
+      <mat-form-field>
+        <!-- <label>Open Time :    </label> -->
+        <input matInput 
+          placeholder="Open Time"
+          formControlName="opentime"
+          [(ngModel)]="item.opentime">
+  
+          <mat-icon matSuffix>access_pin</mat-icon>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <!-- <label>Close Time :     </label> -->
+        <input matInput 
+          placeholder="Close Time"
+          formControlName="closetime"
+          [(ngModel)]="item.closetime">
+          <mat-icon matSuffix>schedule</mat-icon>
+      </mat-form-field>
+      <br>
+      <div>
+        <label id="example-radio-group-label" class="shift">Status :   </label>
+        <mat-radio-group formControlName="status"  [(ngModel)]="item.status">
+          <mat-radio-button  class="example-radio-button shift" value="Open" >Open</mat-radio-button>
+          <mat-radio-button  class="example-radio-button shift" value="Closed" >Closed</mat-radio-button>
+          
+        </mat-radio-group>
+      </div>
+      <br>
+      <div class="button-row">
+        <button mat-raised-button class="btn" type="submit"  >Save</button>
+        <button mat-raised-button class="btn btn1"  >Edit</button>
+      </div>
+    </form>
+    </div>
+    
+  </div>
+</div>
+<app-footer></app-footer>

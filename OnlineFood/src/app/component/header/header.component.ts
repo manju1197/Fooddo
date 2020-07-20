@@ -30,10 +30,10 @@ export class HeaderComponent implements OnInit {
  
 Profile(){
 if(this.CurrentUser.role == "vendor"){
-  this.router.navigate(['/modal']);
+  this.router.navigate(['/vendormodal']);
 }
 else if(this.CurrentUser.role == "Customer"){
-  this.router.navigate(['/view']);
+  this.router.navigate(['/customerprofile']);
 }
 }
 }

@@ -5,3 +5,4 @@ export const restaurantRouter = express.Router();
 restaurantRouter.route('/add').post(restaurantController.signup);
 restaurantRouter.route('/').get(restaurantController.findAll);
 restaurantRouter.route('/:id').get(restaurantController.findByTransaction);
+restaurantRouter.route('/:id').put(restaurantController.update);
