@@ -12,5 +12,5 @@ restRouter.use('/hotel',restaurantRouter);
 restRouter.use('/menu',MenuRouter);
 restRouter.use('/category',CategoryRouter);
 restRouter.use('/order',OrderRouter);
-restRouter.use('./porder',ProductRouter);
+restRouter.use('/porder',ProductRouter);
 restRouter.use('/customer',CustomerRouter);

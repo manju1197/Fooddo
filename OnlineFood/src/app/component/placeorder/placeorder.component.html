@@ -6,15 +6,15 @@
 
         </div>
         <div class="card-body">
-            <form class="form-container" (ngSubmit)="PlaceOrder()"  novalidate [formGroup]="ProductForm" >
+            <form class="form-container"   novalidate [formGroup]="ProductForm" >
                <div>
                 
-                <h3><label>Product Name : </label>{{productdetails.name}}</h3>   
+                <h3><label class="shift " >Product Name :             </label>{{productdetails.name}}</h3>   
                </div>
                     
                   <div>
-                    <label>Calculated Amount :&nbsp;   </label>
-                    <h3>{{productdetails.price}}&nbsp;/-</h3>
+                    
+                    <h3><label  class="shift ">Calculated Amount :     &nbsp;   </label>{{productdetails.price}}&nbsp;/-</h3>
                   </div>
                         
                   
@@ -35,7 +35,7 @@
                        
                     
             <div>
-                <button mat-raised-button type="submit" class="btn"  >Order Now</button>
+                <button mat-raised-button type="button" class="btn" (click)="PlaceOrder(array)" >Order Now</button>
             </div>
                 </form>
 

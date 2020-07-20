@@ -1,13 +1,14 @@
 export class Order {
-
-    userId:String;
-    Calculated_Amt:number;
+    name:String;
+    UserId:String;
+    CalculatedAmt:number;
     discount:number;
-    finalAmount:number;
+    FinalAmt:number;
     quantity:number;
     }
 
 export class Order_P{
+    name:String;
     OrderId:String;
     ProductId:String;
     quantity:number;

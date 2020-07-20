@@ -25,6 +25,8 @@ export class OrderService {
  getPorder():Observable<Order[]>{
   return this.http.get<Order[]>('http://localhost:3001/api/porder');
   }
- 
+  getOneOrder(id):Observable<Order>{
+    return this.http.get<Order>('http://localhost:3001/api/order/'+id);
+  }
 }
 

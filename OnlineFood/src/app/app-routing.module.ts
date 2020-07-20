@@ -29,8 +29,8 @@ const routes: Routes = [
   {path:'view',component:ViewprofileComponent},
   {path:'porder',component:PlaceorderComponent},
   {path:'porder/:id',component:PlaceorderComponent},
-  {path:'ordernow',component:OrderComponent}
-
+  {path:'ordernow',component:OrderComponent},
+  {path:'ordernow/:id',component:OrderComponent}
 ];
 
 @NgModule({

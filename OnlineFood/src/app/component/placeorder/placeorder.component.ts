@@ -31,6 +31,7 @@ Porderobj:Order_P =new Order_P();
 CurrentUser:any={};
 CurrentProduct:any={};
 CurrentOrder:any={};
+array:any;
   ngOnInit(): void {
  if(this.route.snapshot.paramMap.get('id')){
    this.ProductId = this.route.snapshot.paramMap.get('id');
@@ -43,8 +44,8 @@ CurrentOrder:any={};
   })
 
  }
-  
-  this.getCurrentUser();
+  this.createForm();
+    this.getCurrentUser();
 
   
   }
@@ -57,15 +58,15 @@ CurrentOrder:any={};
 createForm(){
  this.ProductForm = this.fb.group({
    quantity:['',Validators.required],
-   
-   discount:['',Validators.required]
+  discount:['',Validators.required]
  })
 }
-PlaceOrder(){
-  this.Orderobj.userId= this.CurrentUser._id;
-  this.Orderobj.Calculated_Amt=this.productdetails.price;
+PlaceOrder(item){
+  this.Orderobj.name= this.productdetails.name;
+  this.Orderobj.UserId= this.CurrentUser._id;
+  this.Orderobj.CalculatedAmt=this.productdetails.price;
   this.Orderobj.discount= this.ProductForm.value.discount;
-  this.Orderobj.finalAmount= this.productdetails.price - this.ProductForm.value.discount;
+  this.Orderobj.FinalAmt= this.productdetails.price - this.ProductForm.value.discount;
   this.Orderobj.quantity = this.ProductForm.value.quantity;
   this.orderService.createOrder(this.Orderobj).subscribe(data =>{
     this.arrayList = data;
@@ -73,7 +74,7 @@ PlaceOrder(){
     this.sharedService.updateOrder(data);
 alert('order added');
 });
-this.router.navigate(['/ordernow']);
-
+this.router.navigate(['/ordernow',item]);
+ 
 }
 }

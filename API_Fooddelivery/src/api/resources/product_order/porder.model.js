@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { number } from 'joi';
+
 const Schema = mongoose.Schema;
 const OrderSchema = new Schema({
      
@@ -31,5 +31,5 @@ isActive:{
     type:Boolean,
     default:true
 }
-},{collection : 'Order'});
+},{collection : 'Product_order'});
 export default new mongoose.model('POrder',OrderSchema);
