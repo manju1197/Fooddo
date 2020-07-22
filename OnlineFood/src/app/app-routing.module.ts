@@ -16,6 +16,12 @@ import { OrderComponent } from './component/order/order.component';
 import { ViewitemComponent } from './component/viewitem/viewitem.component';
 import { EditviewprofileComponent } from './component/editviewprofile/editviewprofile.component';
 import { EditmodalComponent } from './component/editmodal/editmodal.component';
+import { AdmincardsComponent } from './component/admincards/admincards.component';
+import { VendorlistComponent } from './component/vendorlist/vendorlist.component';
+import { CustomerlistComponent } from './component/customerlist/customerlist.component';
+import { VendordashboardComponent } from './component/vendordashboard/vendordashboard.component';
+import { UserComponent } from './component/user/user.component';
+import { MyorderComponent } from './component/myorder/myorder.component';
 
 
 const routes: Routes = [
@@ -23,10 +29,22 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'home',component:HomeComponent},
   {path:'customer',component:CustomerComponent},
+  {path:'vendordash',component:VendordashboardComponent,
+children:[
   {path:'vendor',component:VendorComponent},
-  {path:'admin',component:AdminComponent},
+  {path:'viewitem',component:ViewitemComponent}
+]},
+  {path:'admin',component:AdminComponent,
+children:[
+  {path: '', redirectTo: 'admincard',pathMatch:'full'},
+  {path:'admincard',component:AdmincardsComponent},
+  {path:'vendorlist',component:VendorlistComponent},
+  {path:'user',component:UserComponent},
+  {path:'customerlist',component:CustomerlistComponent},
+{path:'orderlist',component:OrderlistComponent}
+]},
   {path:'additem',component:AddItemComponent},
-  {path:'order',component:OrderlistComponent},
+  // {path:'order',component:OrderlistComponent},
   {path:'modal',component:ModalComponent},
   {path:'client',component:ClientComponent},
   {path:'view',component:ViewprofileComponent},
@@ -34,9 +52,10 @@ const routes: Routes = [
   {path:'porder/:id',component:PlaceorderComponent},
   {path:'ordernow',component:OrderComponent},
   {path:'ordernow/:id',component:OrderComponent},
-  {path:'viewitem',component:ViewitemComponent},
+  
   {path:'vendormodal',component:EditmodalComponent},
-  {path:'customerprofile',component:EditviewprofileComponent}
+  {path:'customerprofile',component:EditviewprofileComponent},
+  {path:'myorder',component:MyorderComponent}
 ];
 
 @NgModule({

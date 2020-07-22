@@ -49,14 +49,15 @@ getOrder(){
     Order(){
       this.Porderobj.name = this.CurrentUser.name;
       this.Porderobj.OrderId=this.CurrentOrder._id;
+      this.Porderobj.UserId= this.CurrentUser._id;
       this.Porderobj.ProductId = this.CurrentProduct._id;
-      
+      this.Porderobj.Productname = this.CurrentProduct.name;
       this.Porderobj.quantity= this.CurrentOrder.quantity;
       this.Porderobj.Total= this.CurrentOrder.quantity * this.CurrentOrder.FinalAmt;
       this.orderService.createPorder(this.Porderobj).subscribe(data =>{
        this.OrderList =data;
         console.log(data);
-        this.snackBar.open(' Order Placed','', {
+        this.snackBar.open(' Order Placed','Successfully', {
           duration: 2000,
         });
     })

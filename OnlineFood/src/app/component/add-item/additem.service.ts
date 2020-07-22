@@ -30,5 +30,7 @@ export class AdditemService {
 getOneProduct(id):Observable<Additem>{
   return this.http.get<Additem>('http://localhost:3001/api/menu/'+id);
 }
-   
+getMyItem(id){
+  return this.http.get<Additem>(`http://localhost:3001/api/menu/item/${id}`);
+}
 }

@@ -1,5 +1,5 @@
 {
-  "name":"API_Fooddelivery",
+  "name": "API_Fooddelivery",
   "version": "1.0.0",
   "description": "",
   "main": "src/app.js",
@@ -17,7 +17,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "joi": "^14.3.1",
-    "mongoose": "^5.9.21"
+    "mongoose": "^5.9.21",
+    "mongoose-paginate": "^5.0.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.4",

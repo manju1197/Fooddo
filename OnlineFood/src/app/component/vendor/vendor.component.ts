@@ -53,18 +53,18 @@ export class VendorComponent implements OnInit {
 
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(AddItemComponent, {
-      width: '1050px',
+  // openDialog(): void {
+  //   const dialogRef = this.dialog.open(AddItemComponent, {
+  //     width: '1050px',
       
-    });
+  //   });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
       
-    });
+  //   });
   
-    }
+  //   }
   
 }
 

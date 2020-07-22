@@ -20,6 +20,8 @@ addForm:FormGroup
    private snackBar:MatSnackBar) { }
 CurrentUser:any ={};
   ngOnInit(): void {
+    this.createForm();
+    this.getCurrentUser();
   }
   
   createForm(){
@@ -45,7 +47,7 @@ CurrentUser:any ={};
       this.modalService.getHotel().subscribe(data =>{
       this.getdetail=data;
       for(let i = 0 ; i<this.getdetail.length;i++ ){
-        if(this.getdetail[i].Modal_id == this.profileDetail._id){
+        if(this.getdetail[i].regId== this.profileDetail._id){
           this.currentemployee[0]=this.getdetail[i];
         }
       }

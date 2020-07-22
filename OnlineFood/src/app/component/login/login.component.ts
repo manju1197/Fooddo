@@ -53,7 +53,7 @@ this.sharedService.updateMessage(data);
       }
   else if(this.loginForm.value.role== "vendor"){
     // this.router.navigate(['/modal']);
-    this.router.navigate(['/vendor'],{relativeTo:this.route});
+    this.router.navigate(['/vendordash'],{relativeTo:this.route});
   }
   else{
     this.router.navigate(['/admin'],{relativeTo:this.route});

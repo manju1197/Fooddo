@@ -1,4 +1,4 @@
-<!-- <app-header></app-header>
+<app-header></app-header>
 
 <div class="container">
   <div class="card model" >
@@ -7,105 +7,104 @@
     </div>
     
     <div class="card-body" >
-      <form class="form-container "  (ngSubmit)="Save()" novalidate [formGroup]="profileForm">
+      <form class="form-container " *ngFor="let item of currentemployee" (ngSubmit)="Save()" novalidate [formGroup]="profileForm">
           
         <mat-form-field> -->
-          <!-- <label>First Name :   </label> -->
-            <!-- <input matInput placeholder="First Name" formControlName="firstname">
+          <label>First Name :   </label>
+            <input matInput placeholder="First Name" formControlName="firstname" [(ngModel)]="item.firstname">
               <mat-icon matSuffix>perm_identity</mat-icon>
        </mat-form-field>
        <br>
-       <mat-form-field> -->
+       <mat-form-field>
         <!-- <label>Last Name  :     </label> -->
-        <!-- <input matInput
+        <input matInput
         placeholder="Last Name."
         formControlName="lastname"
-        >
+        [(ngModel)]="item.lastname">
         <mat-icon matSuffix>perm_identity</mat-icon>
      </mat-form-field>
      <br>
-       <mat-form-field> -->
+       <mat-form-field>
          <!-- <label>DOB :    </label> -->
-<!--        
-          <input matInput [matDatepicker]="picker" placeholder="DOB" formControlName="dob">
+ <input matInput [matDatepicker]="picker" placeholder="DOB" formControlName="dob" [(ngModel)]="item.dob">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
-    <br>
-       <mat-form-field> -->
+    <br> 
+       <mat-form-field> 
         <!-- <label>Address :    </label> -->
-        <!-- <input matInput
+        <input matInput
           placeholder="Address"
           formControlName="address"
-          >
+          [(ngModel)]="item.address">
          
         <mat-icon matSuffix>house</mat-icon>
       </mat-form-field>
       <br>
-      <mat-form-field> -->
+      <mat-form-field>
         <!-- <label>City :    </label> -->
-        <!-- <input matInput
+        <input matInput
           placeholder="City"
           formControlName="city"
-          >
+          [(ngModel)]="item.city">
        
         <mat-icon matSuffix>location_city</mat-icon>
       </mat-form-field>
       <br>
-      <mat-form-field> -->
+      <mat-form-field>
         <!-- <label>State :    </label> -->
-        <!-- <input matInput
+        <input matInput
           placeholder="State"
           formControlName="state"
-          >
+          [(ngModel)]="item.state">
           
         <mat-icon matSuffix>home</mat-icon>
       </mat-form-field>
       <br>
-      <mat-form-field> -->
+      <mat-form-field>
         <!-- <label>Pin :    </label> -->
-        <!-- <input matInput
+        <input matInput
           placeholder="Pin"
           formControlName="pin"
-          >
+          [(ngModel)]="item.pin">
           
         <mat-icon matSuffix>fiber_pin</mat-icon>
       </mat-form-field>
       <br>
-      <mat-radio-group formControlName="gender">
+      <mat-radio-group formControlName="gender" [(ngModel)]="item.gender">
         <label class="shift">Gender  :   </label>
         <mat-radio-button value="Male" class="radio">Male</mat-radio-button>
         <mat-radio-button value="Female"class="radio">Female</mat-radio-button>
         
       </mat-radio-group>
       <br>
-      <mat-form-field> -->
+      <mat-form-field>
         <!-- <label>Contact :    </label> -->
-        <!-- <input matInput type="number"
+        <input matInput type="number"
       placeholder="Contact"
           formControlName="contact"
-          >
+          [(ngModel)]="item.contact">
   
           <mat-icon matSuffix>call</mat-icon>
       </mat-form-field>
       <br>
-      <mat-form-field> -->
+      <mat-form-field>
         <!-- <label>Email :     </label> -->
-        <!-- <input matInput type="email"
+        <input matInput type="email"
          placeholder="Email"
           formControlName="email"
-          >
+          [(ngModel)]="item.email">
           <mat-icon matSuffix>mail</mat-icon>
       </mat-form-field>
       <br>
      
       <div class="button-row">
-        <button mat-raised-button class="btn" type="submit"  >Save</button>
-        <button mat-raised-button class="btn btn1"  >Edit</button>
+        <button mat-raised-button class="btn" type="submit"  >Update</button>
+      
       </div>
     </form>
     </div>
     
   </div>
 </div>
-<app-footer></app-footer> -->
+<app-footer></app-footer> 

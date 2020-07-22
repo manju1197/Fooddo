@@ -1,0 +1,124 @@
+body{
+    background:#000000;
+font-family: 'Raleway', sans-serif;
+}
+.main-section{
+width:80%;
+margin:0 auto;
+text-align: center;
+padding: 0px 5px;
+height: 60%;
+}
+.dashbord{
+width:40%;
+display: inline-block;
+height: 80% !important;
+color:#fff;
+margin-top: 40px; 
+margin: 4%;
+
+}
+.icon-section i{
+font-size: 30px;
+padding:10px;
+border:1px solid #fff;
+border-radius:50%;
+margin-top:15px;
+margin-bottom: 10px;
+
+}
+.icon-section p{
+margin:0px;
+font-size: 20px;
+padding-bottom: 10px;
+
+}
+.detail-section{
+background-color: #2F4254;
+padding: 5px 0px;
+}
+.dashbord .detail-section:hover{
+background-color: #5a5a5a;
+cursor: pointer;
+}
+.detail-section a{
+color:#fff;
+text-decoration: none;
+}
+.dashboard-pink .icon-section,.dashbord-pink .icon-section i{
+    width:90%;
+    display: inline-block;
+    height: 80% !important;
+    color:#fff;
+    margin-top: 10px; 
+    margin: 4%; 
+    background-color:#e91e63;
+    padding-top: 35px;
+    font-size: 20px;
+    
+    }
+ .dashboard-pink .detail-section{
+        background-color:#ec407a;
+        }
+.dashbord-green .icon-section,.dashbord-green .icon-section i{
+    width:90%;
+    display: inline-block;
+    height: 80% !important;
+    color:#fff;
+    margin-top: 10px; 
+    margin: 4%;
+    background-color: #9c27b0;
+    padding-top: 35px;
+    font-size: 20px;
+
+}
+.dashbord-green .detail-section{
+background-color:#ab47bc;
+
+}
+.dashbord-orange .icon-section,.dashbord-orange .icon-section i{
+    
+    background-color: #F39C12;
+}
+.dashbord-orange .detail-section{
+background-color: #DA8C10;
+}
+.dashbord-blue .icon-section,.dashbord-blue .icon-section i{
+    width:90%;
+    display: inline-block;
+    height: 80% !important;
+    color:#fff;
+    padding-top: 35px;
+    font-size: 20px;
+    margin: 2%;
+    background-color: #558b2f;
+}
+.dashbord-blue .detail-section{
+background-color:#689f38;
+}
+.dashbord-red .icon-section,.dashbord-red .icon-section i{
+    width:90%;
+    display: inline-block;
+    height: 80% !important;
+    color:#fff;
+    padding-top: 35px;
+    margin: 2%;
+    font-size: 20px;
+    background-color:#c62828;
+}
+.dashbord-red .detail-section{
+background-color:#d32f2f;
+}
+.dashbord-skyblue .icon-section,.dashbord-skyblue .icon-section i{
+    width:90%;
+    display: inline-block;
+    height: 80% !important;
+    color:#fff;
+    padding-top: 35px;
+    font-size: 20px;
+    margin: 4%;
+    background-color:#8E44AD;
+}
+.dashbord-skyblue .detail-section{
+background-color:#803D9B;
+}

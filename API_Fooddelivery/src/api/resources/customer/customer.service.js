@@ -4,6 +4,7 @@ export default{
         const schema = Joi.object().keys({
             firstname:Joi.string().required(),
             lastname:Joi.string().required(),
+            userId:Joi.string().required(),
             address:Joi.string().required(),
             dob:Joi.string().required(),
            city:Joi.string().required(),

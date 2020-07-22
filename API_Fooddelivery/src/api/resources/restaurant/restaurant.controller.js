@@ -30,7 +30,7 @@ export default{
             },
             update(req,res){
                 const id = req.params.id;
-                User.findOneAndUpdate({_id:id},{$set:req.body},{new:true}).then(emp => {
+                vendor.findOneAndUpdate({_id:id},{$set:req.body},{new:true}).then(emp => {
                     if(!emp){
                         return res.status(400).json({err:"emp not updated"});
                     }
@@ -38,5 +38,11 @@ export default{
                 })
                 .catch(err => res.status(500).json(err));
             },
+            findByTransaction(req,res,next){
+                let {id} =  req.params;
+         
+               vendor.find({'regId':id}).then(data => res.json(data))
+                .catch(err => res.status(500).json(err));
+            }
 
 }

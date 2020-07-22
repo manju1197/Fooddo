@@ -17,7 +17,8 @@ export class ClientComponent implements OnInit {
     private router:Router) { }
     arrayList:any =[];
     CurrentProduct:any={};
-  ngOnInit(): void {
+    userDetails:any =[];
+  ngOnInit(){
     this.addService.getItem().subscribe(data =>{
       this.arrayList = data;
       console.log(this.arrayList);
@@ -25,6 +26,13 @@ export class ClientComponent implements OnInit {
   this.sharedService.updateProduct(data);
  }
     )
+// this.sharedService.currentData.subscribe(data =>{
+//   this.userDetails = data;
+//   if(this.userDetails != null){
+//     this.getMyItem(this.userDetails._id);
+//   }
+//   })
+     
   }
   getProduct(){
     this.sharedService.Pdata.subscribe(data =>{
@@ -35,4 +43,11 @@ export class ClientComponent implements OnInit {
     this.router.navigate(['/porder',item]);
  
    }
+  //  getMyItem(id){
+  //   this.addService.getMyItem(id).subscribe(data => {
+  //     console.log(data);
+  //     this.arrayList = data;
+  //     this.sharedService.updateProduct(data);
+  //   })
+  // }
 }

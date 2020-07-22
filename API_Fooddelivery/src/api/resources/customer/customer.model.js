@@ -11,6 +11,11 @@ lastname:{
     type:String,
     required :true
 },
+userId:{
+    ref:'User',
+    type:Schema.Types.ObjectId,
+    required:true 
+},
 dob:{
     type:Date
 },

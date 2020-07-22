@@ -38,13 +38,18 @@ import { ViewprofileComponent } from './component/viewprofile/viewprofile.compon
 import { PlaceorderComponent } from './component/placeorder/placeorder.component';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
- 
+ import {MatTableModule} from '@angular/material/table';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ClientComponent } from './component/client/client.component';
 import { OrderComponent } from './component/order/order.component';
 import { ViewitemComponent } from './component/viewitem/viewitem.component';
 import { EditviewprofileComponent } from './component/editviewprofile/editviewprofile.component';
 import { EditmodalComponent } from './component/editmodal/editmodal.component';
+import { VendordashboardComponent } from './component/vendordashboard/vendordashboard.component';
+import { CustomerlistComponent } from './component/customerlist/customerlist.component';
+import { VendorlistComponent } from './component/vendorlist/vendorlist.component';
+import { AdmincardsComponent } from './component/admincards/admincards.component';
+import { MyorderComponent } from './component/myorder/myorder.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +74,11 @@ import { EditmodalComponent } from './component/editmodal/editmodal.component';
     ViewitemComponent,
     EditviewprofileComponent,
     EditmodalComponent,
+    VendordashboardComponent,
+    CustomerlistComponent,
+    VendorlistComponent,
+    AdmincardsComponent,
+    MyorderComponent,
    
   ],
   imports: [
@@ -92,8 +102,8 @@ import { EditmodalComponent } from './component/editmodal/editmodal.component';
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatToolbarModule
- 
+    MatToolbarModule,
+MatTableModule 
   
   
   ],

@@ -12,4 +12,11 @@ export class ProfileService {
     return this.http.post<Profile>('http://localhost:3001/api/customer/add',model);
    
  }
+ getUser():Observable<Profile[]>{
+   return this.http.get<Profile[]>('http://localhost:3001/api/customer');
+ 
+  }
+  updateUser(model):Observable<Profile>{
+    return this.http.put<Profile>('http://localhost:3001/api/customer/'+model._id,model); 
+   }
 }

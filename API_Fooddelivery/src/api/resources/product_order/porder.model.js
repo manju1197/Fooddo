@@ -1,11 +1,16 @@
 import mongoose from 'mongoose';
-
+import mongoosePaginate from 'mongoose-paginate';
 const Schema = mongoose.Schema;
 const OrderSchema = new Schema({
      
 name:{
     type:String,
     required :true
+},
+UserId:{
+    ref:'User',
+    type:Schema.Types.ObjectId,
+    required:true
 },
 OrderId:{
     ref:'Order',
@@ -16,6 +21,9 @@ ProductId:{
     ref:'MenuItem',
     type:Schema.Types.ObjectId,
     required:true
+},
+Productname:{
+    type:String
 },
 Quantity:{
     type:Number
@@ -32,4 +40,5 @@ isActive:{
     default:true
 }
 },{collection : 'Product_order'});
+OrderSchema.plugin(mongoosePaginate);
 export default new mongoose.model('POrder',OrderSchema);
