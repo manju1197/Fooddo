@@ -68,14 +68,17 @@ PlaceOrder(){
   this.Orderobj.name= this.productdetails.name;
   this.Orderobj.UserId= this.CurrentUser._id;
   this.Orderobj.CalculatedAmt=this.productdetails.price;
-  this.Orderobj.discount= this.ProductForm.value.discount;
+  this.Orderobj.discount= 0;
+  this.ProductForm.value.discount = 0;
   this.Orderobj.FinalAmt= this.productdetails.price - this.ProductForm.value.discount;
   this.Orderobj.quantity = this.ProductForm.value.quantity;
   this.orderService.createOrder(this.Orderobj).subscribe(data =>{
     this.arrayList = data;
     // console.log(this.arrayList);
     this.sharedService.updateOrder(data);
-alert('order added');
+    this.snackBar.open(' Order Added','Successfully', {
+      duration: 200,
+    });
 });
 
 this.router.navigate(['/ordernow']);

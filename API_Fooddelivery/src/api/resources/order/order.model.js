@@ -21,6 +21,7 @@ FinalAmt:{
 },
 discount:{
     type:Number
+    
 },
 quantity:{
     type:Number
