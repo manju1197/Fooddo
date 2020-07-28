@@ -42,12 +42,13 @@ HotelObj:Modal =  new Modal();
     type:['',Validators.required],
       opentime:['',Validators.required],
       closetime:['',Validators.required],
-      status:['',Validators.required]
+      status:['',Validators.required],
+      isActive:['']
     })
   }
   Save(){
     this.HotelObj.name= this.addForm.value.restaurant;
-    this.HotelObj.regId = this.CurrentUser._id;
+    this.HotelObj.restroId = this.CurrentUser._id;
     this.HotelObj.url = this.addForm.value.url;
     this.HotelObj.address= this.addForm.value.address;
     this.HotelObj.city= this.addForm.value.city;
@@ -55,12 +56,13 @@ HotelObj:Modal =  new Modal();
     this.HotelObj.pin= this.addForm.value.pin;
     this.HotelObj.contact= this.addForm.value.contact;
     this.HotelObj.type= this.addForm.value.type;
-    this.HotelObj.opentime= this.addForm.value.opentime
+    this.HotelObj.opentime= this.addForm.value.opentime;
     this.HotelObj.closetime= this.addForm.value.closetime;
-    this.HotelObj.status= this.addForm.value.status
-
+    this.HotelObj.status= this.addForm.value.status;
+    this.HotelObj.isActive= "true";
     this.modalService.createHotel(this.HotelObj).subscribe(data =>{
       this.hotelList =data;
+      this.sharedService.updateHotel(data);
       console.log(this.hotelList);
       console.log('Hotel added Successfully');
     }),

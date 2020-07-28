@@ -19,6 +19,10 @@ export class AdditemService {
       return this.http.post<Additem>('http://localhost:3001/api/menu/list',model);
      
    }
+   updateItem(model):Observable<Additem>{
+    return this.http.put<Additem>('http://localhost:3001/api/menu/'+model._id,model); 
+   }
+  
    createCategory(model):Observable<Category>{
     return this.http.post<Category>('http://localhost:3001/api/category/add',model);
    
@@ -30,7 +34,11 @@ export class AdditemService {
 getOneProduct(id):Observable<Additem>{
   return this.http.get<Additem>('http://localhost:3001/api/menu/'+id);
 }
+getOneItem(id):Observable<Additem>{
+  return this.http.get<Additem>('http://localhost:3001/api/menu/'+id);
+}
 getMyItem(id){
   return this.http.get<Additem>(`http://localhost:3001/api/menu/item/${id}`);
 }
+
 }

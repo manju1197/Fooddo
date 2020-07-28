@@ -3,11 +3,12 @@ export class Profile {
     lastname:String;
     userId:String;
     dob:Date;
-    Address:String;
-    City:String;
-    State:String;
-    Pin:number;
-    Gender:String;
+    address:String;
+    city:String;
+    state:String;
+    pin:number;
+    gender:String;
     contact:number;
     email:String;
+    isActive:String;
 }

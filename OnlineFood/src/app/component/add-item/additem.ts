@@ -5,4 +5,5 @@ export class Additem {
     image:String;
     price:Number;
     rating:Number;
+    isActive:String;
 }

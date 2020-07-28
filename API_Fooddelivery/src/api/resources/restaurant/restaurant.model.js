@@ -30,7 +30,7 @@ contact:{
     required:true,
     unique:true
 },
-regId:{
+restroId:{
     ref:'User',
     type:Schema.Types.ObjectId,
     required:true
@@ -55,8 +55,8 @@ created_dt:{
     default:Date.now
 },
 isActive:{
-    type:Boolean,
-    default:true
+    type:String,
+    // default:true
 }
 },{collection : 'restaurants'});
 export default new mongoose.model('vendor',VendorSchema);

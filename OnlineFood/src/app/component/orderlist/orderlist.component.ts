@@ -10,7 +10,7 @@ import { Order_P } from '../placeorder/order';
 export class OrderlistComponent implements OnInit {
 orderlist:Order_P[];
   constructor(private orderService:OrderService) { }
-  displayedColumns: string[] = ['name','Productname','OrderId','Total'];
+  displayedColumns: string[] = ['name','Productname','OrderId','Total','created_dt'];
   dataSource = [];
   ngOnInit(): void {
   this.getOrder();

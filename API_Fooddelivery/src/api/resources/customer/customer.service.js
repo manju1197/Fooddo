@@ -12,8 +12,8 @@ export default{
            pin:Joi.number().required(),
             contact:Joi.number().required(),
             email:Joi.string().email().required(),
-            gender:Joi.string().required()
-           
+            gender:Joi.string().required(),
+           isActive:Joi.string().required()
         });
         const {error,value} = Joi.validate(body,schema);
         console.log(error);

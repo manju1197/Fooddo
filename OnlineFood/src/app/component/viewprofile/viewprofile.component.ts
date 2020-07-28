@@ -41,7 +41,7 @@ createForm(){
     pin:['',Validators.required],
     gender:['',Validators.required],
     contact:['',Validators.required],
-    email:['',Validators.required],
+    email:['',Validators.required]
   })
 }
 Save(){
@@ -49,14 +49,14 @@ Save(){
   this.ProfileObj.lastname = this.profileForm.value.lastname;
   this.ProfileObj.userId = this.CurrentUser._id;
   this.ProfileObj.dob = this.profileForm.value.dob;
-  this.ProfileObj.Address = this.profileForm.value.address;
-  this.ProfileObj.City = this.profileForm.value.city;
-  this.ProfileObj.State = this.profileForm.value.state;
-  this.ProfileObj.Gender = this.profileForm.value.gender;
-  this.ProfileObj.Pin = this.profileForm.value.pin;
+  this.ProfileObj.address = this.profileForm.value.address;
+  this.ProfileObj.city = this.profileForm.value.city;
+  this.ProfileObj.state = this.profileForm.value.state;
+  this.ProfileObj.gender = this.profileForm.value.gender;
+  this.ProfileObj.pin = this.profileForm.value.pin;
   this.ProfileObj.contact = this.profileForm.value.contact;
   this.ProfileObj.email = this.profileForm.value.email;
-
+     this.ProfileObj.isActive= "true";
 
   this.profileService.createUser( this.ProfileObj).subscribe(data=>{
     this._snackBar.open('sign up Successful', 'Customer  Added', {

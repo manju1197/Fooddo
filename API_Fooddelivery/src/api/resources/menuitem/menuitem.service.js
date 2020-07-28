@@ -9,6 +9,7 @@ export default{
         image:Joi.string().required(),
            price:Joi.number().required(),
            rating:Joi.number().required(),
+           isActive:Joi.string().required()
           
         });
         const {error,value} = Joi.validate(body,schema);

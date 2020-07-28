@@ -50,6 +50,7 @@ getOrder(){
       this.Porderobj.name = this.CurrentUser.name;
       this.Porderobj.OrderId=this.CurrentOrder._id;
       this.Porderobj.UserId= this.CurrentUser._id;
+      this.Porderobj.restroId = this.CurrentProduct.restroId;
       this.Porderobj.ProductId = this.CurrentProduct._id;
       this.Porderobj.Productname = this.CurrentProduct.name;
       this.Porderobj.quantity= this.CurrentOrder.quantity;

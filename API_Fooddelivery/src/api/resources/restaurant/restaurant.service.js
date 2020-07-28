@@ -3,7 +3,7 @@ export default{
     validationSchema(body){
         const schema = Joi.object().keys({
             name:Joi.string().required(),
-            regId:Joi.string().required(),
+            restroId:Joi.string().required(),
             url:Joi.string().required(),
             address:Joi.string().required(),
            city:Joi.string().required(),
@@ -14,7 +14,7 @@ export default{
             status:Joi.string().required(),
             opentime:Joi.date().required(),
             closetime:Joi.date().required(),
-           
+            isActive:Joi.string().required()
         });
         const {error,value} = Joi.validate(body,schema);
         console.log(error);

@@ -22,6 +22,10 @@ import { CustomerlistComponent } from './component/customerlist/customerlist.com
 import { VendordashboardComponent } from './component/vendordashboard/vendordashboard.component';
 import { UserComponent } from './component/user/user.component';
 import { MyorderComponent } from './component/myorder/myorder.component';
+import { HotelorderComponent } from './component/hotelorder/hotelorder.component';
+import { EdithotelComponent } from './component/edithotel/edithotel.component';
+import { EditcustomerComponent } from './component/editcustomer/editcustomer.component';
+import { EditmenuComponent } from './component/editmenu/editmenu.component';
 
 
 const routes: Routes = [
@@ -31,8 +35,12 @@ const routes: Routes = [
   {path:'customer',component:CustomerComponent},
   {path:'vendordash',component:VendordashboardComponent,
 children:[
+  {path: '', redirectTo: 'viewitem',pathMatch:'full'},
   {path:'vendor',component:VendorComponent},
-  {path:'viewitem',component:ViewitemComponent}
+  {path:'viewitem',component:ViewitemComponent},
+  {path:'hotelorder',component:HotelorderComponent},
+  {path:'edit',component:EditmenuComponent},
+  {path:'edit/:id',component:EditmenuComponent}
 ]},
   {path:'admin',component:AdminComponent,
 children:[
@@ -41,12 +49,15 @@ children:[
   {path:'vendorlist',component:VendorlistComponent},
   {path:'user',component:UserComponent},
   {path:'customerlist',component:CustomerlistComponent},
-{path:'orderlist',component:OrderlistComponent}
+{path:'orderlist',component:OrderlistComponent},
+{path:'hotel',component:EdithotelComponent},
+  {path:'customer',component:EditcustomerComponent},
 ]},
   {path:'additem',component:AddItemComponent},
   // {path:'order',component:OrderlistComponent},
   {path:'modal',component:ModalComponent},
   {path:'client',component:ClientComponent},
+  {path:'client/:id',component:ClientComponent},
   {path:'view',component:ViewprofileComponent},
   {path:'porder',component:PlaceorderComponent},
   {path:'porder/:id',component:PlaceorderComponent},

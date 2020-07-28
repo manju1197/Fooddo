@@ -24,7 +24,10 @@
         </ng-container>
       
         <!-- Weight Column -->
-       
+        <ng-container matColumnDef="created_dt">
+          <th mat-header-cell *matHeaderCellDef> Order Date</th>
+          <td mat-cell *matCellDef="let element"> {{element.created_dt | date}} </td>
+        </ng-container>
       
         <!-- Symbol Column -->
         <ng-container matColumnDef="Total">

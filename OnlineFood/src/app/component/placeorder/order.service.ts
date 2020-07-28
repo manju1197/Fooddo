@@ -29,5 +29,8 @@ export class OrderService {
   getMyTransaction(id){
     return this.http.get<OrderPaginate>(`http://localhost:3001/api/porder/myorder/${id}`);
 }
+getMyOrder(id){
+  return this.http.get<OrderPaginate>(`http://localhost:3001/api/porder/hotelorder/${id}`);
+}
 }
 

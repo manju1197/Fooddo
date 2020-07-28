@@ -12,6 +12,8 @@ export class SharedService {
   orderProduct = this.order.asObservable();
   private Product = new BehaviorSubject('');
   Pdata= this.Product.asObservable();
+  private hotel = new BehaviorSubject('');
+  restaurant = this.hotel.asObservable();
   constructor() { }
   updateMessage(item:any){
     this.userData.next(item);
@@ -24,5 +26,8 @@ export class SharedService {
  }
   updateProduct(item:any){
     this.Product.next(item);
+  }
+  updateHotel(item:any){
+    this.hotel.next(item);
   }
 }

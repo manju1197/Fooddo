@@ -3,13 +3,13 @@
 <div class="container">
   <div class="card model" >
     <div class="header">
-      <h1 >Registration Details</h1>
+      <h1 >Update Profile</h1>
     </div>
     
     <div class="card-body" >
       <form class="form-container " *ngFor="let item of currentemployee" (ngSubmit)="Save()" novalidate [formGroup]="profileForm">
           
-        <mat-form-field> -->
+        <mat-form-field> 
           <label>First Name :   </label>
             <input matInput placeholder="First Name" formControlName="firstname" [(ngModel)]="item.firstname">
               <mat-icon matSuffix>perm_identity</mat-icon>
@@ -97,6 +97,15 @@
           <mat-icon matSuffix>mail</mat-icon>
       </mat-form-field>
       <br>
+      <!-- <div class="col-lg-4 col-md-5 col-sm-12">
+        <label>isActive</label>
+              <select [(ngModel)]="item.isActive" formControlName="isActive" >
+                  <option>True </option>
+                  <option>False </option>
+              </select>
+           
+           
+  </div><br> -->
      
       <div class="button-row">
         <button mat-raised-button class="btn" type="submit"  >Update</button>

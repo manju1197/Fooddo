@@ -10,7 +10,7 @@
       <form class="form-container "  (ngSubmit)="Save()" novalidate [formGroup]="profileForm">
           
         <mat-form-field>
-          <!-- <label>First Name :   </label> -->
+        
             <input matInput placeholder="First Name" formControlName="firstname">
               <mat-icon matSuffix>perm_identity</mat-icon>
        </mat-form-field>
@@ -98,6 +98,15 @@
           <mat-icon matSuffix>mail</mat-icon>
       </mat-form-field>
       <br>
+      <!-- <div class="col-lg-4 col-md-5 col-sm-12">
+        <label>isActive</label>
+              <select [(ngModel)]="item.isActive" formControlName="isActive" >
+                  <option>True </option>
+                  <option>False </option>
+              </select>
+           
+           
+  </div> -->
      
       <div class="button-row">
         <button mat-raised-button class="btn" type="submit"  >Save</button>

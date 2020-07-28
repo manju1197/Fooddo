@@ -50,6 +50,10 @@ import { CustomerlistComponent } from './component/customerlist/customerlist.com
 import { VendorlistComponent } from './component/vendorlist/vendorlist.component';
 import { AdmincardsComponent } from './component/admincards/admincards.component';
 import { MyorderComponent } from './component/myorder/myorder.component';
+import { HotelorderComponent } from './component/hotelorder/hotelorder.component';
+import { EditcustomerComponent } from './component/editcustomer/editcustomer.component';
+import { EdithotelComponent } from './component/edithotel/edithotel.component';
+import { EditmenuComponent } from './component/editmenu/editmenu.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +83,10 @@ import { MyorderComponent } from './component/myorder/myorder.component';
     VendorlistComponent,
     AdmincardsComponent,
     MyorderComponent,
+    HotelorderComponent,
+    EditcustomerComponent,
+    EdithotelComponent,
+    EditmenuComponent,
    
   ],
   imports: [

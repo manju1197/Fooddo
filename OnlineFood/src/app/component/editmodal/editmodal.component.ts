@@ -37,7 +37,9 @@ CurrentUser:any ={};
     type:['',Validators.required],
       opentime:['',Validators.required],
       closetime:['',Validators.required],
-      status:['',Validators.required]
+      status:['',Validators.required],
+      isActive:['',Validators.required]
+      
     })
   }
   getCurrentUser(){
@@ -46,8 +48,9 @@ CurrentUser:any ={};
       console.log(this.profileDetail._id);
       this.modalService.getHotel().subscribe(data =>{
       this.getdetail=data;
+    
       for(let i = 0 ; i<this.getdetail.length;i++ ){
-        if(this.getdetail[i].regId== this.profileDetail._id){
+        if(this.getdetail[i].restroId== this.profileDetail._id){
           this.currentemployee[0]=this.getdetail[i];
         }
       }
@@ -59,7 +62,7 @@ CurrentUser:any ={};
 
 Save(){
   this.addForm.value._id= this.currentemployee[0]._id;
- 
+//  this.addForm.value.isActive="true";
   this.modalService.updateHotel(this.addForm.value).subscribe(data=>{
     this.snackBar.open('Updated', 'Successfully', {
       duration: 2000,

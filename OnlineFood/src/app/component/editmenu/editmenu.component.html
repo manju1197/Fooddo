@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="card model" >
+         <div class="header">
+            <h1 >Update Menu</h1>
+          </div>
+          
+    <div class="card-body" >
+                <form  class="form-container"  *ngFor="let item of currentemployee" (ngSubmit)="Save()"  novalidate [formGroup]="addForm" >
+                    <mat-form-field>
+                        <mat-label>Category</mat-label>
+                      
+                        <input matInput formControlName="Categoryname" name="food" [(ngModel)]="item.Categoryname" placeholder="Category">
+                      </mat-form-field>
+                      <br>
+    
+                      <mat-form-field>
+                          <!-- <label>Menu Image</label> -->
+                          <input matInput type="string"  formControlName="image" [(ngModel)]="item.image" placeholder="Menu Image">
+                         
+                      </mat-form-field>
+                      <br>
+    
+                      <mat-form-field >
+                        <mat-label>Menu Item Name </mat-label>
+                        <input matInput type="string"  formControlName="name" [(ngModel)]="item.name" placeholder="Menu Name">
+                        <mat-icon matSuffix>menu_book</mat-icon>
+                        <mat-hint>List of menu</mat-hint>
+                      </mat-form-field>
+                      <br>
+                      
+                      <mat-form-field >
+                        <mat-label>Price </mat-label>
+                        <input matInput type="number"  formControlName="price" [(ngModel)]="item.price" placeholder="Price">
+                        <span matPrefix>₹&nbsp;</span>
+                         <span matSuffix>.00</span> 
+                      </mat-form-field><br>
+                      <mat-form-field >
+                        <mat-label>Rating </mat-label>
+                        <input matInput type="number"  formControlName="rating" [(ngModel)]="item.rating" placeholder="Rating"> 
+                      </mat-form-field><br>
+                      <div class="col-lg-4 col-md-5 col-sm-12">
+                        <label>isActive</label>
+                              <select [(ngModel)]="item.isActive" formControlName="isActive" >
+                                  <option>True </option>
+                                  <option>False </option>
+                              </select>
+                           
+                           
+                  </div><br>
+                      <div >
+                        
+                        <button  mat-raised-button  class=" btn " type="submit">Update</button>
+                      </div>
+                      
+                </form>
+
+</div>            </div> 
+         </div>      
+          
+       
+        
+
+
+
+
+
+
+
+
+
+
+

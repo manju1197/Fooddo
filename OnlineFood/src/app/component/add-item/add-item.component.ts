@@ -54,7 +54,7 @@ categoryObj:Additem= new Additem();
       price:['',Validators.required],
       image:['',Validators.required],
       rating:['',Validators.required],
-      
+      isActive:['']
     })
   }
   getType(){
@@ -82,7 +82,7 @@ categoryObj:Additem= new Additem();
   this.categoryObj.price= this.addForm.value.price;
   this.categoryObj.image= this.addForm.value.image;
   this.categoryObj.rating = this.addForm.value.rating;
-
+  this.categoryObj.isActive="True";
   this.addService.createItem(this.categoryObj).subscribe(data => {
      this.addList = data;
     console.log(this.addList);

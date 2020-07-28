@@ -22,6 +22,11 @@ ProductId:{
     type:Schema.Types.ObjectId,
     required:true
 },
+restroId:{
+    ref:'vendor',
+    type:Schema.Types.ObjectId,
+    required:true
+},
 Productname:{
     type:String
 },

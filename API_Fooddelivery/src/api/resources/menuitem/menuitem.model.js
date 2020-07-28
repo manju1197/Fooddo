@@ -31,8 +31,8 @@ created_dt:{
     default:Date.now
 },
 isActive:{
-    type:Boolean,
-    default:true
+    type:String,
+    default:"True"
 }
 },{collection : 'MenuItems'});
 export default new mongoose.model('Menu',ItemSchema);

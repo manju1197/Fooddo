@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AdditemService } from '../add-item/additem.service';
 import { SharedService } from '../login/shared.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-client',
@@ -14,26 +14,38 @@ export class ClientComponent implements OnInit {
   constructor(public dialog: MatDialog,
     private addService:AdditemService,
     private sharedService:SharedService,
-    private router:Router) { }
+    private router:Router,
+    private route:ActivatedRoute) { }
     arrayList:any =[];
     CurrentProduct:any={};
     userDetails:any =[];
+    restroId:any={};
   ngOnInit(){
-    this.addService.getItem().subscribe(data =>{
-      this.arrayList = data;
-      console.log(this.arrayList);
+//     this.addService.getItem().subscribe(data =>{
+//       this.arrayList = data;
+//       console.log(this.arrayList);
       
-  this.sharedService.updateProduct(data);
- }
-    )
-// this.sharedService.currentData.subscribe(data =>{
-//   this.userDetails = data;
-//   if(this.userDetails != null){
-//     this.getMyItem(this.userDetails._id);
-//   }
-//   })
+//   this.sharedService.updateProduct(data);
+//  }
+//     )
+// -------------------------------get item list--------------------------------------------------
+if(this.route.snapshot.paramMap.get('id')){
+  this.restroId = this.route.snapshot.paramMap.get('id');
+}
+if(this.restroId != null){
+  this.addService.getMyItem(this.restroId).subscribe(data =>{
+    this.arrayList = data;
+    console.log(this.arrayList);
+    this.sharedService.updateProduct(data);
+  },
+  err =>{console.log(err);
+ })
+
+}
+
      
   }
+
   getProduct(){
     this.sharedService.Pdata.subscribe(data =>{
       this.CurrentProduct = data;
@@ -43,11 +55,5 @@ export class ClientComponent implements OnInit {
     this.router.navigate(['/porder',item]);
  
    }
-  //  getMyItem(id){
-  //   this.addService.getMyItem(id).subscribe(data => {
-  //     console.log(data);
-  //     this.arrayList = data;
-  //     this.sharedService.updateProduct(data);
-  //   })
-  // }
-}
+     
+ }

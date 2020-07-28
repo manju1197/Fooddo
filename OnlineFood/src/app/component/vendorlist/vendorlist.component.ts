@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from '../modal/modal.service';
 import { Modal } from '../modal/modal';
+import { SharedService } from '../login/shared.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-vendorlist',
@@ -9,7 +12,9 @@ import { Modal } from '../modal/modal';
 })
 export class VendorlistComponent implements OnInit {
 
-  constructor(private modalService:ModalService) { }
+  constructor(private modalService:ModalService,
+    private sharedService:SharedService,
+    private router:Router) { }
 hotelList:Modal[];
 displayedColumns: string[] = ['actions','name','address','city','contact','type','status'];
 dataSource = [];
@@ -24,6 +29,8 @@ getVendor(){
   })
 }
 update(item){
-  
+  console.log(item);
+  this.sharedService.updateMessage(item._id);
+  this.router.navigate(['admin/hotel']);
 }
 }

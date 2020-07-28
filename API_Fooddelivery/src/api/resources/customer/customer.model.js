@@ -49,8 +49,8 @@ created_dt:{
     default:Date.now
 },
 isActive:{
-    type:Boolean,
-    default:true
+    type:String,
+    // default:true
 }
 },{collection : 'Customer'});
 export default new mongoose.model('client',ClientSchema);

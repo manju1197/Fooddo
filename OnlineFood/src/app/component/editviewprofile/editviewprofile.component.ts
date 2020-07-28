@@ -36,6 +36,7 @@ export class EditviewprofileComponent implements OnInit {
       gender:['',Validators.required],
       contact:['',Validators.required],
       email:['',Validators.required],
+      isActive:['',Validators.required]
     })
   }
   getCurrentUser(){
@@ -44,7 +45,7 @@ export class EditviewprofileComponent implements OnInit {
       console.log(this.profileDetail._id);
       this.profileService.getUser().subscribe(data =>{
       this.getdetail=data;
-      for(let i = 0 ; i<this.getdetail.length;i++ ){
+      for(let i = 0 ; i<this.getdetail.length; i++ ){
         if(this.getdetail[i].userId== this.profileDetail._id){
           this.currentemployee[0]=this.getdetail[i];
         }
@@ -56,7 +57,7 @@ export class EditviewprofileComponent implements OnInit {
 }
 Save(){
   this.profileForm.value._id= this.currentemployee[0]._id;
- 
+//  this.profileForm.value.isActive = "true";
   this.profileService.updateUser(this.profileForm.value).subscribe(data=>{
     this._snackBar.open('Updated', 'Successfully', {
       duration: 2000,

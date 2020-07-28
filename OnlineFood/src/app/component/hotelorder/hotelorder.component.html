@@ -1,0 +1,46 @@
+
+<div class="container">
+    <mat-toolbar>
+        <span>My Orders</span>
+      </mat-toolbar>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+             
+        <!-- Position Column -->
+        <ng-container matColumnDef="UserId">
+          <th mat-header-cell *matHeaderCellDef> Customer Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.UserId.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Productname">
+          <th mat-header-cell *matHeaderCellDef> Product Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.Productname}} </td>
+        </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="OrderId">
+          <th mat-header-cell *matHeaderCellDef> Order ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.OrderId._id}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+       
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Total">
+          <th mat-header-cell *matHeaderCellDef> Total </th>
+          <td mat-cell *matCellDef="let element"> {{element.Total}} </td>
+        </ng-container> 
+        <ng-container matColumnDef="created_dt">
+          <th mat-header-cell *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.created_dt | date}} </td>
+        </ng-container> 
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+      
+   
+</div>
+
+

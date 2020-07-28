@@ -9,7 +9,7 @@
           <div class="card">
             <div class="card-body">
               <h1 class="header">{{arr.Categoryname}}</h1>
-              <img src ="assets/images/{{arr.image}}" class="image">
+              <img src ="{{arr.image}}" class="image">
               <div class="arrange">
                 <h2>{{arr.name}}</h2>
                 <h2 style="margin-left: 40px;">₹{{arr.price}}</h2>
@@ -18,8 +18,8 @@
              </div>
             </div>
            <div class="card-footer">
-            <button mat-raised-button class="btn" >Order</button>
-            <button mat-raised-button class="btn" >Deactivate</button>
+        
+            <button mat-raised-button class="btn" (click)="edit(arr._id)">Edit</button>
            </div>
 
           </div>

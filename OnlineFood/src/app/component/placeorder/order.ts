@@ -11,6 +11,7 @@ export class Order_P{
     name:String;
     UserId:String;
     OrderId:String;
+    restroId:String;
     ProductId:String;
     Productname:String;
     quantity:number;
@@ -18,6 +19,13 @@ export class Order_P{
 }
 export class OrderPaginate{
     docs: Order_P[];
+    total:number;
+    limit:number;
+    page:number;
+    pages:number;
+}
+export class OPaginate{
+    docs: Order[];
     total:number;
     limit:number;
     page:number;
