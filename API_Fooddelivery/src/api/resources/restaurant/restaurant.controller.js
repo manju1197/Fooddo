@@ -23,29 +23,29 @@ export default{
             console.log(err);
             }
         },
-        // async Hotel(req,res){
-        //     try{
+        async Hotel(req,res){
+            try{
                
-        //         const {error,value} = transService.validationSchema(req.body);
-        //         if( error && error.details){
-        //                  return res.status(500).json(error);
-        //                 }
-        //             // create user
-        //            const user = await vendor.findAll({isActive: value.isActive});
-        //            if(user.isActive == "True"){
-        //             return res.json(user);
-        //            }
+                const {error,value} = transService.validationSchema(req.body);
+                if( error && error.details){
+                         return res.status(500).json(error);
+                        }
+                    // create user
+                   const user = await vendor.findAll({isActive: value.isActive});
+                   if(user.isActive == "True"){
+                    return res.json(user);
+                   }
                    
-        //            else{
-        //             return res.status(400).json({err: 'Invalid Restaurant'});
-        //            }
+                   else{
+                    return res.status(400).json({err: 'Invalid Restaurant'});
+                   }
                        
-        //         }
-        //     catch(err){
+                }
+            catch(err){
     
-        //         console.log(err);
-        //         }
-        //     }  ,
+                console.log(err);
+                }
+            }  ,
         findByTransaction(req,res,next){
                 let {id} =  req.params;
                 Transaction.find({'regId':id}).then(data => res.json(data))

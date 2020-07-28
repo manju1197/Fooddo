@@ -7,3 +7,4 @@ restaurantRouter.route('/').get(restaurantController.findAll);
 restaurantRouter.route('/:id').get(restaurantController.findByTransaction);
 restaurantRouter.route('/:id').put(restaurantController.update);
 restaurantRouter.route('/view/:id').get(restaurantController.findByTransaction);
+restaurantRouter.route('/view').get(restaurantController.Hotel);

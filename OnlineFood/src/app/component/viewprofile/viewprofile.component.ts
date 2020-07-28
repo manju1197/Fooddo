@@ -56,7 +56,7 @@ Save(){
   this.ProfileObj.pin = this.profileForm.value.pin;
   this.ProfileObj.contact = this.profileForm.value.contact;
   this.ProfileObj.email = this.profileForm.value.email;
-     this.ProfileObj.isActive= "true";
+     this.ProfileObj.isActive= "True";
 
   this.profileService.createUser( this.ProfileObj).subscribe(data=>{
     this._snackBar.open('sign up Successful', 'Customer  Added', {

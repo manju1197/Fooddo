@@ -3,6 +3,7 @@ import { SharedService } from '../login/shared.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalService } from '../modal/modal.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editmodal',
@@ -17,7 +18,8 @@ addForm:FormGroup
   constructor(private sharedService:SharedService,
     private fb:FormBuilder,
     private modalService:ModalService,
-   private snackBar:MatSnackBar) { }
+   private snackBar:MatSnackBar,
+   private router:Router) { }
 CurrentUser:any ={};
   ngOnInit(): void {
     this.createForm();
@@ -71,5 +73,6 @@ Save(){
   },
  err=>console.log(err)) ; 
 console.log(this.addForm.value);
+this.router.navigate(['/vendordash/viewitem']);
 }
 }

@@ -59,7 +59,7 @@ HotelObj:Modal =  new Modal();
     this.HotelObj.opentime= this.addForm.value.opentime;
     this.HotelObj.closetime= this.addForm.value.closetime;
     this.HotelObj.status= this.addForm.value.status;
-    this.HotelObj.isActive= "true";
+    this.HotelObj.isActive= "True";
     this.modalService.createHotel(this.HotelObj).subscribe(data =>{
       this.hotelList =data;
       this.sharedService.updateHotel(data);

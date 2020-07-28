@@ -7,6 +7,8 @@ import { Additem } from './additem';
 import { CategoryComponent } from './category/category.component';
 import {Category} from './category';
 import { SharedService } from '../login/shared.service';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -29,7 +31,8 @@ categoryObj:Additem= new Additem();
     private addService:AdditemService,
     public dialog:MatDialog,
     private sharedService:SharedService,
-    
+    private router:Router,
+    private snackBar:MatSnackBar
     ) {
       
      }
@@ -87,8 +90,11 @@ categoryObj:Additem= new Additem();
      this.addList = data;
     console.log(this.addList);
   
-    alert('menu added successfully');
+    this.snackBar.open('Menu Added Successfully', 'Success', {
+      duration: 1000,
+    });
   })
+  this.router.navigate(['/vendordash/viewitem']);
  
 }
  openDialog() {
