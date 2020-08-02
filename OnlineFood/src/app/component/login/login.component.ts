@@ -36,7 +36,7 @@ user = new User();
     this.loginForm = this.fb.group({
       email:['',Validators.required],
       password:['',Validators.required],
-      role:['',Validators.required]
+      // role:['',Validators.required]
     })
   }
   login(){
@@ -47,15 +47,15 @@ user = new User();
 this.sharedService.updateMessage(data);
       // this.router.navigate(['user']);
       // console.log(data);
-      if(this.loginForm.value.role == "Customer"){
+      if(data.role == "Customer"){
         // this.router.navigate(['/view']);
         this.router.navigate(['/customer'],{relativeTo:this.route});
       }
-  else if(this.loginForm.value.role== "vendor"){
+  else if(data.role== "vendor"){
     // this.router.navigate(['/modal']);
     this.router.navigate(['/vendordash'],{relativeTo:this.route});
   }
-  else{
+  else {
     this.router.navigate(['/admin'],{relativeTo:this.route});
   }
     },

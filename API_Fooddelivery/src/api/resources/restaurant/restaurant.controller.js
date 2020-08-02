@@ -31,7 +31,7 @@ export default{
                          return res.status(500).json(error);
                         }
                     // create user
-                   const user = await vendor.findAll({isActive: value.isActive});
+                   const user = await vendor.find({isActive: 'True'       });
                    if(user.isActive == "True"){
                     return res.json(user);
                    }
